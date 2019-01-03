@@ -16,6 +16,7 @@
           $_SESSION['id'] = $Data['id'];
           $_SESSION['nom'] = $Data['nom'];
           $_SESSION['prenom'] = $Data['prenom'];
+          $_SESSION['admin'] = $Data['admin'];
 
           ob_end_clean();
 
@@ -38,7 +39,7 @@
     }
   }
 
-	drawHeader('moncompte');
+
   if(isset($_GET['redirection'])){
     $direction="/moncompte/identification.php?redirection=".$_GET['redirection'];
   }else{
