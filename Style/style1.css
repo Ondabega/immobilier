@@ -21,7 +21,7 @@
 }
 
 .navbar {
-  background: black;
+  background: grey;
   transition: 1s;
 }
 
@@ -36,7 +36,7 @@
   padding : 1em;
   border-radius: 10px;
   transition: 1s;
-  color: #FFF;
+  color: black;
 }
 
 .selt:hover {
@@ -60,6 +60,10 @@
 
 .logow {
   margin: 2%;
+}
+
+.logo {
+  color: :black;
 }
 
 .phrase {
