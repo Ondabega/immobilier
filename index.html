@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Style/style1.css">
+	<title>Untitled</title>
+</head>
+<body>
+
+	<!-- navigation -->
+	<div class="header" style="background: url(images/fancycrave.jpg) no-repeat center center; background-size: cover;">
+		<nav class="nav" id="nav">
+			<div class="element">
+				<a href="#about" class="selt" onclick="myFunction()">A propos</a>
+				<a href="#portefolio" class="selt" onclick="myFunction()">Galerie</a>
+				<a href="#contact" class="selt" onclick="myFunction()">Contact</a>
+			</div>
+			<div class="logow">
+				<a href="#index" class="logo"> LOGO </a>
+
+	<!-- boutton hamberger -->
+				<a href="javascript:void(0);" style="@media screen and (max-width: 460) { font-size:90px;}" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
+		</nav>
+	</div>
+
+	<!-- add javascript for navbar onscroll -->
+	<script type="text/javascript">
+		window.onscroll = function() {myFunction()};
+
+		function myFunction() {
+  		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    		document.getElementById("nav").className = "navbar";
+    	}
+  		else {
+    		document.getElementById("nav").className = "";
+  		}
+		}
+	</script>
+
+	<div>
+		<p class="phrase">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<p class="phrase">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</p>
+	</div>
+
+</body>
+</html>
