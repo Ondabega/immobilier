@@ -12,13 +12,14 @@ include_once "../needed.php";
 <body>
 
 	<!-- navigation -->
-	<div class="header" style="background: url(../images/cover2.jpg) no-repeat center center; background-size: cover;">
+	<div class="header" style="background: url(../images/cover2.jpg) no-repeat center center; background-size: cover; height: 500px">
 		<nav class="nav" id="nav">
 			<div class="element">
 			<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="#portefolio" class="selt" onclick="myFunction()">Annonces</a>
 				<a href="#contact" class="selt" onclick="myFunction()">Contact</a>
-				<a href="#connexion" class="selt" id="connect" onclick="myFunction()">Connexion</a>
+        	<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+				else{ echo "<a href='../index.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
 			</div>
 			<div class="logow">
 				<a href="#index" class="logo" > Audrey Brezout </a>
@@ -40,11 +41,3 @@ include_once "../needed.php";
   		}
 		}
 	</script>
-
-  <section class="banner" id="index">
-  		<div class="contain">
-  			<div class="inbanner">
-    				<a href="#contact"><button class="btn-custom"> La force est dans le geste </button></a>
-  			</div>
-  		</div>
-  	</section>
