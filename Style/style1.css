@@ -8,11 +8,6 @@
   font-family: "Polarise"; src: url('../polices/Polarise.ttf');
 }
 
-@font-face {
-    font-family: "Hittheroad";
-    src: url('HITROAD.TTF');
-    }
-
 .logo {
  font-family: "Polarise",arial, sans-serif;
  font-size:25px ;
