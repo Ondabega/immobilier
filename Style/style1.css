@@ -89,6 +89,8 @@
 
   .boutton {
     padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     font:bold 15px Helvetica;
     background-color: #23B2E5;
     color:white;
@@ -99,7 +101,7 @@
   }
 
   #boutton-d {
-      margin-left: 10em;
+      margin-left: 15em;
   }
 
   .banner {
