@@ -44,16 +44,19 @@
 }
 
 .selt {
-  margin: 1em;
-  padding : 1em;
+  margin: 0.75em;
+  padding : 0.75em;
   border-radius: 10px;
   transition: 1s;
-  color: black;
 }
 
 .selt:hover {
   background-color: orange;
   transition: .5s;
+}
+
+#connect {
+  border: 1Px solid;
 }
 
 .logow {
