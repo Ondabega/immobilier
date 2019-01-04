@@ -1,3 +1,7 @@
+<?php
+include_once "needed.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
