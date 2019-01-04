@@ -46,7 +46,11 @@
     $direction="/moncompte/identification.php";
   }
 ?>
+<div class="row">
+  <div class="col-md-2 offset-md-4">
+
 <h3>Identifiez-vous</h3>
+
     <form action=<?php echo $direction?> method="post" style="padding-top:20px; width : 400px;" >
         <?php
           if(!empty($errorMessage))
@@ -65,3 +69,5 @@
         </div>
         <input type="submit" name="submit" value="Connexion" class="btn btn-default"/>
     </form>
+  </div>
+</div>
