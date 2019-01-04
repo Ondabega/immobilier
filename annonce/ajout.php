@@ -59,69 +59,46 @@ else
   if(!$_SESSION['admin']){
     echo "<p>Vous n'avez pas les droits pour accéder à cette partie. <a href='".$url."' class='btn btn-default pull-right'>Accueil</a></p>";
   }else{
-  $query= $bdd -> query('SELECT * FROM qualite_quiz_question ORDER BY ordre DESC LIMIT 1');
-  while ($Data = $query->fetch()) {
-  $lastOrdre= $Data['ordre'];
-  }
 
   if(!empty($_POST)){
-    if($lastOrdre >= $_POST['ordre']){
-      $query = $bdd -> prepare('UPDATE qualite_quiz_question SET ordre=ordre+1 WHERE ordre >= ? ');
-      $query -> execute(array($_POST['ordre']));
-    }
-    $file=upload($bdd,'file',"../../ressources","Quiz",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+
+    $file=upload($bdd,'file',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
     if($file < 0){$file=NULL;}
-    $reponse1=$_POST['reponse1'];
-    $reponse2=$_POST['reponse2'];
-    $reponse3=$_POST['reponse3'];
-    $reponse4=$_POST['reponse4'];
-    if($_FILES['file_1']['name'] != ""){
-      $id1=upload($bdd,'file_1',"../../ressources","Quiz",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
-      if($id1>=0){
-        $reponse1="img=".$id1;
-      }
-    }
-    if($_FILES['file_2']['name'] != ""){
-      $id2=upload($bdd,'file_2',"../../ressources","Quiz",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
-      if($id2>=0){
-        $reponse2="img=".$id2;
-      }    }
-    if($_FILES['file_3']['name'] != ""){
-      $id3=upload($bdd,'file_3',"../../ressources","Quiz",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
-      if($id3>=0){
-        $reponse3="img=".$id3;
-      }    }
-    if($_FILES['file_4']['name'] != ""){
-      $id4=upload($bdd,'file_4',"../../ressources","Quiz",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
-      if($id4>=0){
-        $reponse4="img=".$id4;
-      }    }
-    $query = $bdd -> prepare('INSERT INTO qualite_quiz_question(type,titre,question,reponse_1,reponse_2,reponse_3,reponse_4,corrige_1,corrige_2,corrige_3,corrige_4,ordre,image_correction,commentaire) VALUES (:type,:titre,:question,:reponse_1,:reponse_2,:reponse_3,:reponse_4,:corrige_1,:corrige_2,:corrige_3,:corrige_4,:ordre,:file,:commentaire)');
-    $id= $bdd -> lastInsertId();
+    if($_POST['type']==0){
+    $query = $bdd -> prepare('INSERT INTO vente(prix,description,ville,image,depositaire) VALUES (:prix,:description,:ville,:image,:depositaire)');
+
     $query -> execute(array(
-      'type' => $_POST['type'],
-      'titre' => $_POST['titre'],
-      'question' => $_POST['question'],
-      'reponse_1' => $reponse1,
-      'reponse_2' => $reponse2,
-      'reponse_3' => $reponse3,
-      'reponse_4' => $reponse4,
-      'corrige_1' => $_POST['vrai1'],
-      'corrige_2' => $_POST['vrai2'],
-      'corrige_3' => $_POST['vrai3'],
-      'corrige_4' => $_POST['vrai4'],
-      'ordre' => $_POST['ordre'],
-      'file' => $file,
-      'commentaire' => $_POST['commentaire']
+      'prix' => $_POST['prix'],
+      'description' => $_POST['Description'],
+      'ville' => $_POST['ville'],
+      'image' => $file,
+      'depositaire' => $_POST['depositaire'],
     ));
 
     if($query ==false){
       warning('Erreur','Les données entrées ne sont pas conformes.');
     }else{
-      success('Ajouté','La question a bien été ajoutée.');
-      $lastOrdre++;
+      success('Ajouté','Offre de vente bien ajoutée.');
     }
-  }
+  }else{
+    $query = $bdd -> prepare('INSERT INTO location(prix,description,ville,image,depositaire) VALUES (:prix,:description,:ville,:image,:depositaire)');
+
+    $query -> execute(array(
+      'prix' => $_POST['prix'],
+      'description' => $_POST['Description'],
+      'ville' => $_POST['ville'],
+      'image' => $file,
+      'depositaire' => $_POST['depositaire'],
+    ));
+
+    if($query ==false){
+      warning('Erreur','Les données entrées ne sont pas conformes.');
+    }else{
+      success('Ajouté','Offre de location bien ajoutée.');
+
+    }
+
+  }}
   ?>
   <div class="boutons_nav" style="display: flex; justify-content: center;">
     <a href="ajout.php" class="bouton_menu bouton_nav_selected" style="margin-right:20%">Ajout</a>
@@ -133,15 +110,24 @@ else
   	<div class="form-group">
   	<label>Type</label>
   	<select name="type" class="form-control">
-  		<option value="vente" selected="selected">vente</option>
-  		<option value="location">location</option>
+  		<option value="0" selected="selected">vente</option>
+  		<option value="1">location</option>
   	</select>
   	</div>
 
+    <div class="form-group">
+  	<label>Prix</label>
+  	<input class="form-control" name="prix" type="int">
+  	</div>
 
   	<div class="form-group">
   	<label>Description</label>
-  	<input class="form-control" name="question" type="text">
+  	<input class="form-control" name="Description" type="text">
+  	</div>
+
+    <div class="form-group">
+  	<label>Ville</label>
+  	<input class="form-control" name="ville" type="text">
   	</div>
 
     <div class="form-group">
