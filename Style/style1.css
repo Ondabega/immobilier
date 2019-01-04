@@ -5,7 +5,20 @@
 }
 
 @font-face {
-  font-family: "Polarise"; url('polices/Polarise.ttf');
+  font-family: "Polarise"; src: url('../polices/Polarise.ttf');
+}
+
+@font-face {
+    font-family: "Hittheroad";
+    src: url('HITROAD.TTF');
+    }
+
+.logo {
+ font-family: "Polarise",arial, sans-serif;
+ font-size:25px ;
+ text-align:center;
+ font-weight:bold;
+ color: black;
 }
 
 .header {
@@ -64,11 +77,6 @@
 
 .logow {
   margin: 2%;
-}
-
-.logo {
-  color: :black;
-  font-family: Polarise;
 }
 
 .phrase {
