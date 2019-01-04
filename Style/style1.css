@@ -67,6 +67,13 @@
   margin: 1%;
 }
 
+.accueil {
+  display: block;
+  text-align: center;
+  margin: 30% 45% 55% 30%;
+  font-weight: bold;
+}
+
 .phrase {
   padding: 20px;
   margin: 20px;

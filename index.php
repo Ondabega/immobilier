@@ -25,6 +25,9 @@ include_once "needed.php";
 
 			</div>
 		</nav>
+		<div>
+			<h1 class="accueil">Bienvenue sur IMMOBI</h1>
+		</div>
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
