@@ -40,3 +40,11 @@ include_once "../needed.php";
   		}
 		}
 	</script>
+
+  <section class="banner" id="index">
+  		<div class="contain">
+  			<div class="inbanner">
+    				<a href="#contact"><button class="btn-custom"> La force est dans le geste </button></a>
+  			</div>
+  		</div>
+  	</section>
