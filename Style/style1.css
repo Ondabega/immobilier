@@ -94,7 +94,7 @@
     font:bold 15px Helvetica;
     background-color: #23B2E5;
     color:white;
-    border-radius:4px;
+    border-radius:1em;
     box-shadow:3px 3px 5px black;
     cursor: pointer;
     border: 0px;
@@ -142,7 +142,7 @@
 
   .manda {
     display: block;
-    margin-left: 37%;
+    margin-left: 34%;
     margin-right: auto;
     margin-top: 20%;
   }
