@@ -5,7 +5,6 @@
 	<title>footer</title>
 </head>
 <body>
-
   <!-- debut de la zone contact********************* -->
   	<section class="contact" id="contact">
   		<div class="container">
@@ -16,7 +15,7 @@
   		        		<fieldset>
   		            		<legend>Envoyez moi un message</legend>
 
-  		        			<form class="form-horizontal" action="contact-form.php" method="post">
+  		        			<form class="form-horizontal" action="contact.php" method="post">
 
   		        				<!-- deco de message d'alerte -->
   		        				<style type="text/css">
@@ -95,7 +94,6 @@
   		      		unset($_SESSION['success']);
   		      		?>
   <!-- fin de fonction du formulaire******************** -->
-
 
 <!-- STyle du pied de page -->
 	<style type="text/css">

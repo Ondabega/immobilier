@@ -24,17 +24,17 @@
 		# code...
 		$_SESSION['errors'] = $errors;
 		$_SESSION['inputs'] = $_POST;
-		header('Location: index.php#contact');
+		header('Location: contact-form.php#contact');
 	}
 	else{
 		$_SESSION['success'] = 1;
-		$to = 'ondiguidominique14@gmail.com';
+		$to = 'audrey@gmail.com';
 		$subject = 'Contact du site';
 		$msg =
-			"Salut, Domi! Un visiteur du nom de $civilite $nom, dont l'adresse mail est $email a pris contact de ton site et son message est le suivant: \n
+			"Salut, Audrey! Un visiteur du nom de $nom, dont l'adresse mail est $email a pris contact de ton site et son message est le suivant: \n
 			$message";
 		mail($to, $subject, $msg);
-		header('Location: index.php#contact');
+		header('Location: contact-form.php#contact');
 	}
 
 ?>
