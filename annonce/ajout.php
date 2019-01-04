@@ -49,17 +49,16 @@ include_once "../needed.php";
 { ?>
   <h2>Espace admin</h2>
   <h4>Vous devez être connecté pour accéder à cette partie.</h4>
-  <a href="/moncompte/identification.php?redirection=dojo_qualite/quiz/ajout.php"><button class="btn btn-default">Se connecter</button></a>
-  <a href="index.php" class="btn btn-default">Quiz</a>
+  <a href="/moncompte/identification.php?redirection=annonce/ajout.php"><button class="btn btn-default">Se connecter</button></a>
+  <a href="../index.php" class="btn btn-default">Acceuil</a>
 <?php
 }
 else
 {
-  echo "<h2>Quiz</h2>";
-  if(!$_SESSION['qualite']){
+  echo "<h2>Gestion des offres</h2>";
+  if(!$_SESSION['admin']){
     echo "<p>Vous n'avez pas les droits pour accéder à cette partie. <a href='".$url."' class='btn btn-default pull-right'>Accueil</a></p>";
   }else{
-  $lastOrdre=-1;
   $query= $bdd -> query('SELECT * FROM qualite_quiz_question ORDER BY ordre DESC LIMIT 1');
   while ($Data = $query->fetch()) {
   $lastOrdre= $Data['ordre'];
@@ -130,59 +129,38 @@ else
   </div>
 
   <form method="post" style="margin-top:20px;" enctype="multipart/form-data">
-    <div class="form-group">
-      <label>Question n°</label>
-      <input type="number" class="form-control" name="ordre" value="<?php echo $lastOrdre+1 ?>">
-    </div>
+
   	<div class="form-group">
   	<label>Type</label>
   	<select name="type" class="form-control">
-  		<option value="0" selected="selected">MOD</option>
-  		<option value="1">MOI</option>
+  		<option value="vente" selected="selected">vente</option>
+  		<option value="location">location</option>
   	</select>
-  	<label>Titre</label>
-  	<input class="form-control" name="titre" type="text">
   	</div>
+
+
   	<div class="form-group">
-  	<label>Question</label>
+  	<label>Description</label>
   	<input class="form-control" name="question" type="text">
   	</div>
-  	<div class="form-group">
-  		<label>Réponse 1 :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="vrai1">
-        <input name="vrai1" type="checkbox" value="1"> Vrai</label>
-  		<input name="reponse1" class="form-control" type="text">
-      <input type="file" name="file_1">
-  	</div>
-  	<div class="form-group">
-  		<label>Réponse 2 :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="vrai2">
-        <input name="vrai2" type="checkbox" value="1"> Vrai</label>
-  		<input name="reponse2" class="form-control" type="text">
-      <input type="file" name="file_2">
-  	</div>
-  	<div class="form-group">
-  		<label>Réponse 3 :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="vrai3">
-        <input name="vrai3" type="checkbox" value="1"> Vrai</label>
-  		<input name="reponse3" class="form-control" type="text">
-      <input type="file" name="file_3">
-  	</div>
-  	<div class="form-group">
-  		<label>Réponse 4 :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="vrai4">
-        <input name="vrai4" type="checkbox" value="1"> Vrai</label>
-  		<input name="reponse4" class="form-control" type="text">
-      <input type="file" name="file_4">
-  	</div>
+
     <div class="form-group">
-  		<label>Image de Correction :     </label>
+  		<label>Image :     </label>
   		<input name="file" type="file">
   	</div>
     <div class="form-group">
-  		<label>Commentaire de correction :     </label>
-  		<input name="commentaire" class="form-control" type="text">
-  	</div>
+
+  <label>Depositaire</label>
+  <select class="form-control" name="depositaire" >
+    <?php
+    $profil = $bdd -> query('SELECT * FROM utilisateur');
+    while($personne = $profil -> fetch()){ ?>
+      <option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']." ".$personne['prenom']; ?></option>
+  <?php  } ?>
+  </select>
+</div>
+
+
   	<input value="Ajouter" class="btn btn-default" type="submit">
 
 
