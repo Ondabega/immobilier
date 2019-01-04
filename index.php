@@ -21,7 +21,7 @@ include_once "needed.php";
 				<a href="#connexion" class="selt" id="connect" onclick="myFunction()">Connexion</a>
 			</div>
 			<div class="logow">
-				<a href="#index" class="logo" style="color: black; "> Audrey Brezout </a>
+				<a href="#index" class="logo" style="color: black; margin-top: 0px"> Audrey Brezout </a>
 
 			</div>
 		</nav>
