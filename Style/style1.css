@@ -56,20 +56,6 @@
   transition: .5s;
 }
 
-.connect {
-  margin: 1em;
-  padding : 1em;
-  border-radius: 10px;
-  transition: 1s;
-  background-color: orange;
-  transition: .5s;
-}
-
-.connect:hover {
-  border: 3px 3px 3px 3px black;
-  color: black;
-}
-
 .logow {
   margin: 2%;
 }
