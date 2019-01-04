@@ -29,8 +29,8 @@ include_once "../needed.php";
 			</div>
 		</nav>
 		<div class="manda">
-			<button class="boutton">Achats</button>
-			<button class="boutton" id="boutton-d">Locations</button>
+			<a href="vente.php"><button class="boutton">Achats</button></a>
+			<a href="location.php"><button class="boutton" id="boutton-d">Locations</button></a>
 		</div>
 	</div>
 
