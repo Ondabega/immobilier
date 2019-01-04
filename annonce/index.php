@@ -27,6 +27,10 @@ include_once "../needed.php";
 
 			</div>
 		</nav>
+		<div class="manda">
+			<button class="boutton">Achats</button>
+			<button class="boutton" id="boutton-d">Locations</button>
+		</div>
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
