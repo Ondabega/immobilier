@@ -27,7 +27,7 @@ include_once "needed.php";
 			</div>
 		</nav>
 		<div>
-			<h1 class="accueil">Bienvenue sur IMMOBI</h1>
+			<h1 class="accueil">Bienvenue chez Immobilier</h1>
 		</div>
 	</div>
 
