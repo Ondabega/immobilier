@@ -157,7 +157,7 @@
 				<div class="row">
 					<h3> Réseaux sociaux </h3>
             			<a class="case" rel="follow" href="https://twitter.com/">
-              			<img class="icon" alt="Twitter" title="Twitter" src="icons/twitter-icon.svg"></a></td>
+              			<img class="icon" alt="Twitter" title="Twitter" src="icons/twitter-icon.svg"></a>
 
             			<a class="case" rel="follow" href="https://www.linkedin.com/">
               			<img class="icon" alt="LinkedIn" title="LinkedIn" src="icons/linkedin-icon.svg"></a>
