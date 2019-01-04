@@ -18,7 +18,7 @@ include_once "../needed.php";
 			<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="#portefolio" class="selt" onclick="myFunction()">Achat</a>
 				<a href="#contact" class="selt" onclick="myFunction()">Location</a>
-				<?php if(!empty($_SESSION['login']) && $_SESSION['admin']==1 ){ echo "<a href='#connexion' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" } ?>
+				<?php if(!empty($_SESSION['login']) && $_SESSION['admin']==1 ){ echo "<a href='#connexion' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ; } ?>
 			</div>
 			<div class="logow">
 				<a href="#index" class="logo" > Audrey Brezout </a>
