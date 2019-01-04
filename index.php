@@ -7,7 +7,7 @@ include_once "needed.php";
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="Style/style1.css">
-	<title>Untitled</title>
+	<title>index</title>
 </head>
 <body>
 
@@ -17,9 +17,9 @@ include_once "needed.php";
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="annonce\index.php" class="selt" onclick="myFunction()">Annonces</a>
-				<a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>
-				<?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
-			else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
+				<a href="#contact" class="selt" onclick="myFunction()">Contact</a>
+				<?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
+			else{ echo "<a href='index.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
 			</div>
 			<div class="logow">
 				<a href="#index" class="logo" > Audrey Brezout </a>
@@ -52,6 +52,32 @@ include_once "needed.php";
 <p class="phrase">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
 	</div>
+
+	<!-- pied de page -->
+<footer class="footer">
+			<div class="row">
+					<h3> Réseaux sociaux </h3>
+            			<a class="case" rel="follow" href="https://twitter.com/">
+              			<img class="icon" alt="Twitter" title="Twitter" src="icons/twitter-icon.svg"></a></td>
+
+            			<a class="case" rel="follow" href="https://www.linkedin.com/">
+              			<img class="icon" alt="LinkedIn" title="LinkedIn" src="icons/linkedin-icon.svg"></a>
+
+            			<a class="case" rel="follow" href="https://www.instagram.com/">
+          				<img class="icon" alt="Instagram" title="Instagram" src="icons/instagram-icon.svg"></a>
+
+          				<a class="case" rel="follow" href="https://www.facebook.com/">
+          				<img class="icon" alt="Facebook" title="Facebook" src="icons/facebook-icon.svg"></a>
+          		</div>
+
+				<hr class="separator">
+
+				<div class="footer-bottom">
+					<div class="copyright-text">
+						<p>CopyRight © 2018 Name</p>
+					</div> <!-- End Col -->
+				</div>
+</footer>
 
 </body>
 </html>

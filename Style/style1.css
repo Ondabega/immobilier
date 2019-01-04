@@ -157,7 +157,7 @@
     position: fixed;  }
 
     .footer {
-      background-color: green;
+      background-color: RGBA(88,168,158,0.5);
       text-align: center;
       padding-left: 20%;
       padding-right: 20%;

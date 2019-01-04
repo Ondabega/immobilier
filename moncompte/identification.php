@@ -58,7 +58,7 @@
     <div class="element">
       <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
       <a href="annonce\index.php" class="selt" onclick="myFunction()">Annonces</a>
-      <a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>
+      <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
       <?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
     else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
     </div>

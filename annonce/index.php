@@ -7,7 +7,7 @@ include_once "../needed.php";
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../Style/style1.css">
-	<title>Untitled</title>
+	<title>Annonces</title>
 </head>
 <body>
 
