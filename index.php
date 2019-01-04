@@ -15,13 +15,13 @@ include_once "needed.php";
 	<div class="header" style="background: url(images/cover.jpg) no-repeat center center; background-size: cover;">
 		<nav class="nav" id="nav">
 			<div class="element">
-				<a href="#about" class="selt" onclick="myFunction()">Accueil</a>
+				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="#portefolio" class="selt" onclick="myFunction()">Annonces</a>
 				<a href="#contact" class="selt" onclick="myFunction()">Contact</a>
 				<a href="#connexion" class="selt" id="connect" onclick="myFunction()">Connexion</a>
 			</div>
 			<div class="logow">
-				<a href="#index" class="logo" style="color: black; margin-top: 0px"> Audrey Brezout </a>
+				<a href="#index" class="logo" > Audrey Brezout </a>
 
 			</div>
 		</nav>
