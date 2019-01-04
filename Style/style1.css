@@ -87,7 +87,7 @@
   margin: 20px;
 }
 
-  .btn-custom {
+  .boutton {
     padding: 10px;
     font:bold 15px Helvetica;
     background-color: #23B2E5;
@@ -96,6 +96,10 @@
     box-shadow:3px 3px 5px black;
     cursor: pointer;
     border: 0px;
+  }
+
+  #boutton-d {
+      margin-left: 8em;
   }
 
   .banner {
@@ -132,4 +136,11 @@
   .banner .btn-custom:active {
     border: 0px;
     box-shadow: 0px 0px 0px;
+  }
+
+  .manda {
+    display: block;
+    margin-left: 40%;
+    margin-right: auto;
+    margin-top: 20%;
   }
