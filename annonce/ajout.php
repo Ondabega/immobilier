@@ -16,8 +16,6 @@ include_once "../needed.php";
 		<nav class="nav" id="nav">
 			<div class="element">
 			<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-				<a href="#portefolio" class="selt" onclick="myFunction()">Achat</a>
-				<a href="#contact" class="selt" onclick="myFunction()">Location</a>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
 			</div>
