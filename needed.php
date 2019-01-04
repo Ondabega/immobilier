@@ -32,3 +32,34 @@ $url ="http://immobilier.fr/" ;
 
 
   </head>
+
+<?php
+  function upload($bdd,$index,$dossier,$maxsize=FALSE,$extensions=FALSE)
+  {
+      global $url;
+       if (!isset($_FILES[$index]) OR $_FILES[$index]['error'] > 0) return -1;
+       if ($maxsize !== FALSE AND $_FILES[$index]['size'] > $maxsize) return -2;
+       $ext = substr(strrchr($_FILES[$index]['name'],'.'),1);
+       if ($extensions !== FALSE AND !in_array($ext,$extensions)) return -3;
+       $nom = md5(uniqid(rand(), true));
+       $chemin= "$dossier"."/".$nom.".".$ext;
+       if(!move_uploaded_file($_FILES[$index]['tmp_name'],$chemin))return -1;
+       $query= $bdd -> prepare('INSERT INTO files(chemin) VALUES (:chemin)');
+       $query -> execute(array(
+         'chemin' => $chemin,
+       ));
+       return $bdd ->lastInsertId();
+  }
+
+  function warning($titre,$texte){ ?>
+  <div class="alert alert-danger">
+      <strong><?php echo $titre;?></strong>  -  <?php echo $texte; ?>
+  </div> <?php
+}
+function success($titre,$texte){ ?>
+  <div class="alert alert-success">
+      <strong><?php echo $titre;?></strong>  -  <?php echo $texte; ?>
+  </div> <?php
+}
+
+  ?>
