@@ -13,6 +13,14 @@
   font-family: "Anthemie"; src: url('../polices/Anthemie.ttf');
 }
 
+.separator {
+			height: 2px;
+			width: 6%;
+			box-shadow: none;
+			border: none;
+			background-color: #ECB849;
+		}
+
 .logo {
  font-family: "Polarise",arial, sans-serif;
  font-size:25px ;
