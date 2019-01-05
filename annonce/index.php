@@ -22,7 +22,7 @@ include_once "../needed.php";
         <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 			<div class="logow">
-				<a href="#index" class="logo" > Audrey Brezout </a>
+				<a href="../index.php" class="logo" > Audrey Brezout </a>
 
 			</div>
 		</nav>

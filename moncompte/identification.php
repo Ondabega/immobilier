@@ -63,7 +63,7 @@
     else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
     </div>
     <div class="logow">
-      <a href="#index" class="logo" > Audrey Brezout </a>
+      <a href="../index.php" class="logo" > Audrey Brezout </a>
 
     </div>
   </nav>
