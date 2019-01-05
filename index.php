@@ -70,7 +70,7 @@ include_once "needed.php";
           				<img class="icon" alt="Instagram" title="Instagram" src="icons/instagram-icon.svg"></a>
 
           				<a class="case" rel="follow" href="https://www.facebook.com/">
-          				<img class="icon" alt="Facebook" title="Facebook" src="icons/facebook-icon.svg"></a>
+          				<img class="icon" alt="Facebook" title="Facebook" src="facebook-icon.svg"></a>
           	</div>
 
 				<hr class="separator">
