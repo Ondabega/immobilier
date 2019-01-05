@@ -1,8 +1,12 @@
+<?php
+include_once "../needed.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>template 1</title>
-    <link rel="stylesheet" type="text/css" href="Style/style1.css">
+    <link rel="stylesheet" type="text/css" href="../Style/style1.css">
 </head>
 <body>
 
@@ -25,6 +29,20 @@
             padding: 1%;
         }
     </style>
+
+    <!-- navigation -->
+      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: absolute;">
+        <div class="element">
+        <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
+          <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
+            <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+          else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+          <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
+        </div>
+        <div class="logow">
+          <a href="#index" class="logo" > Audrey Brezout </a>
+        </div>
+      </nav>
 
     <div class="tbanner">
         <div class="tcontain" style="background-color: black; height: 15em; width: 40%;">
