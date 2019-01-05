@@ -53,7 +53,7 @@
 	<title>Untitled</title>
 </head>
 
-<div class="header" style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover;width:100%; height: 600px">
+<div class="header" style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover;width:100%; height: 610px; margin-bottom:0;">
   <nav class="nav" id="nav">
     <div class="element">
       <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>

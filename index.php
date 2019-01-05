@@ -59,18 +59,17 @@ include_once "needed.php";
 </style>
 <footer class="footer">
 			<div class="row">
-					<h3> Réseaux sociaux </h3>
             			<a class="case" rel="follow" href="https://twitter.com/">
-              			<img class="icon" alt="Twitter" title="Twitter" src="icons/twitter-icon.svg"></a></td>
+              			<img class="icon" alt="Twitter" title="Twitter" src="twitter-icon.svg"></a></td>
 
             			<a class="case" rel="follow" href="https://www.linkedin.com/">
-              			<img class="icon" alt="LinkedIn" title="LinkedIn" src="icons/linkedin-icon.svg"></a>
+              			<img class="icon" alt="LinkedIn" title="LinkedIn" src="linkedin-icon.svg"></a>
 
             			<a class="case" rel="follow" href="https://www.instagram.com/">
-          				<img class="icon" alt="Instagram" title="Instagram" src="icons/instagram-icon.svg"></a>
+          				<img class="icon" alt="Instagram" title="Instagram" src="instagram-icon.svg"></a>
 
           				<a class="case" rel="follow" href="https://www.facebook.com/">
-          				<img class="icon" alt="Facebook" title="Facebook" src="icons/facebook-icon.svg"></a>
+          				<img class="icon" alt="Facebook" title="Facebook" src="facebook-icon.svg"></a>
           	</div>
 
 				<hr class="separator">
