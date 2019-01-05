@@ -149,13 +149,16 @@ a {
 
     /*contact*/
     .contact {
+      display: flex;
       justify-content: center;
+
     }
 
-    .contain{
-			display: table;
-			width: 100%;
-			height: 100%;
+    .container{
+			display: block;
+      background-color: yellow;
+      margin-left: auto;
+      margin-right: auto;
 		}
 
     .contact legend {
@@ -176,4 +179,6 @@ a {
         width: 500px;
         margin: 2%;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
 		}
