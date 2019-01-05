@@ -103,6 +103,10 @@ else
     <a href="suppression.php" class="bouton_menu">Modification/Suppression</a>
   </div>
 
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
   <form method="post" style="margin-top:20px;" enctype="multipart/form-data">
 
   	<div class="form-group">
@@ -149,6 +153,12 @@ else
 
 
   </form>
+
+</div>
+<div class="col-md-2">
+</div>
+
+</div>
 
 
 <?php
