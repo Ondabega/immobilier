@@ -7,6 +7,7 @@ include_once "needed.php";
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="Style/style1.css">
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
 	<title>index</title>
 </head>
 <body>
@@ -55,23 +56,6 @@ include_once "needed.php";
 	</div>
 
 	<!-- pied de page -->
-<style>
-.separator {
-			height: 2px;
-			width: 6%;
-			box-shadow: none;
-			border: none;
-			background-color: #ECB849;
-		}
-
-		.footer {
-			background-color: RGBA(88,168,158,0.5);
-			text-align: center;
-			padding-left: 20%;
-			padding-right: 20%;
-			padding-bottom: 10px;
-			padding-top: 10px;
-		}
 </style>
 <footer class="footer">
 			<div class="row">
