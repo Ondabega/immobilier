@@ -89,7 +89,6 @@ a {
 .phrase {
   padding: 20px;
   margin: 20px;
-  background-color: yellow;
 }
 
   .boutton {
@@ -156,7 +155,6 @@ a {
 
     .container{
 			display: block;
-      background-color: yellow;
       margin-left: auto;
       margin-right: auto;
 		}
