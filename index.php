@@ -17,9 +17,10 @@ include_once "needed.php";
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="annonce\index.php" class="selt" onclick="myFunction()">Annonces</a>
-				<a href="#contact" class="selt" onclick="myFunction()">Contact</a>
-				<?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
-			else{ echo "<a href='index.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
+				<a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>
+				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+			<?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 			<div class="logow">
 				<a href="#index" class="logo" > Audrey Brezout </a>
@@ -49,11 +50,29 @@ include_once "needed.php";
 		<p class="phrase">
 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-<p class="phrase">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			<p class="phrase">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
 	</div>
 
 	<!-- pied de page -->
+<style>
+.separator {
+			height: 2px;
+			width: 6%;
+			box-shadow: none;
+			border: none;
+			background-color: #ECB849;
+		}
+
+		.footer {
+			background-color: RGBA(88,168,158,0.5);
+			text-align: center;
+			padding-left: 20%;
+			padding-right: 20%;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+</style>
 <footer class="footer">
 			<div class="row">
 					<h3> Réseaux sociaux </h3>
@@ -68,7 +87,7 @@ include_once "needed.php";
 
           				<a class="case" rel="follow" href="https://www.facebook.com/">
           				<img class="icon" alt="Facebook" title="Facebook" src="icons/facebook-icon.svg"></a>
-          		</div>
+          	</div>
 
 				<hr class="separator">
 

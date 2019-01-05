@@ -17,9 +17,9 @@ include_once "needed.php";
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="annonce\index.php" class="selt" onclick="myFunction()">Annonces</a>
-				<a href="#contact-form" class="selt" onclick="myFunction()" style="background-color: orange;">Contact</a>
-				<?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
-			else{ echo "<a href='index.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
+        <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+      else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+      <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 			<div class="logow">
 				<a href="#index" class="logo" > Audrey Brezout </a>
@@ -27,7 +27,7 @@ include_once "needed.php";
 			</div>
 		</nav>
 		<div>
-			<h1 class="accueil">Bienvenue chez Immobilier</h1>
+			<h1 class="accueil">Contact  Us</h1>
 		</div>
 	</div>
 
