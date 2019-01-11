@@ -9,10 +9,10 @@ include_once "../needed.php";
 	<link rel="stylesheet" type="text/css" href="../Style/style1.css">
 	<title>Annonces</title>
 </head>
-<body>
+<body style="background: url(../images/cover2.jpg) no-repeat center center; background-size: cover; height: 610px; background-attachment: fixed;">
 
 	<!-- navigation -->
-	<div class="header" style="background: url(../images/cover2.jpg) no-repeat center center; background-size: cover; height: 610px">
+	<div class="header">
 		<nav class="nav" id="nav">
 			<div class="element">
 			<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -30,9 +30,22 @@ include_once "../needed.php";
 			<a href="vente.php"><button class="boutton">Achats</button></a>
 			<a href="location.php"><button class="boutton" id="boutton-d">Locations</button></a>
 		</div>
+	</div>
 
-		<!-- pied de page -->
-	<div class="piedfoot" style="display: block; ">
+	<!-- add javascript for navbar onscroll -->
+	<script type="text/javascript">
+		window.onscroll = function() {myFunction()};
+
+		function myFunction() {
+  		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    		document.getElementById("nav").className = "navbar";
+    	}
+  		else {
+    		document.getElementById("nav").className = "";
+  		}
+		}
+	</script>
+
 	<footer class="footer">
 				<div class="row">
 										<a class="case" rel="follow" href="https://twitter.com/">
@@ -56,22 +69,6 @@ include_once "../needed.php";
 						</div> <!-- End Col -->
 					</div>
 	</footer>
-</div>
-	</div>
-
-	<!-- add javascript for navbar onscroll -->
-	<script type="text/javascript">
-		window.onscroll = function() {myFunction()};
-
-		function myFunction() {
-  		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    		document.getElementById("nav").className = "navbar";
-    	}
-  		else {
-    		document.getElementById("nav").className = "";
-  		}
-		}
-	</script>
 
 
 
