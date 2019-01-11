@@ -48,7 +48,7 @@ include_once "needed.php";
 <section class="contact" id="contact">
 		<div class="container">
 			<h2 id="contact-me">Retrouvez nous</h2>
-			<hr class="separator">
+			<hr class="separator" style="margin-left: 47%;">
 				<div class="row">
 		        	<div class="margfoot">
 		        		<fieldset>
@@ -86,7 +86,7 @@ include_once "needed.php";
 									<img class="icon" alt="Facebook" title="Facebook" src="facebook-icon.svg"></a>
 						</div>
 
-				<hr class="separator">
+				<hr class="separator" style="margin-left: 47%;">
 
 				<div class="footer-bottom">
 					<div class="copyright-text">

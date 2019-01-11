@@ -61,7 +61,7 @@ include_once "../needed.php";
 										<img class="icon" alt="Facebook" title="Facebook" src="../facebook-icon.svg"></a>
 							</div>
 
-					<hr class="separator">
+					<hr class="separator" style="margin-left: 47%;">
 
 					<div class="footer-bottom">
 						<div class="copyright-text">
