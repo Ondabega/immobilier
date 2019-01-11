@@ -53,7 +53,8 @@
 	<title>Untitled</title>
 </head>
 
-<div class="header" style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover;width:100%; height: 610px; margin-bottom:0;">
+<body style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
+<div class="header">
   <nav class="nav" id="nav">
     <div class="element">
       <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -97,7 +98,7 @@
 
   </div>
 </div>
-
+</body>
 <!-- add javascript for navbar onscroll -->
 <script type="text/javascript">
   window.onscroll = function() {myFunction()};
