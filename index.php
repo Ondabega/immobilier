@@ -57,7 +57,7 @@ include_once "needed.php";
 
 	<!-- pied de page -->
 </style>
-<footer class="footer">
+<footer class="footer" style="margin-bottom: 0px;">
 			<div class="row">
             			<a class="case" rel="follow" href="https://twitter.com/">
               			<img class="icon" alt="Twitter" title="Twitter" src="twitter-icon.svg"></a></td>
