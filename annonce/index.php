@@ -6,7 +6,7 @@ include_once "../needed.php";
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../Style/style1.css">
+	<link rel="stylesheet" type="text/css" href="../style1.css">
 	<title>Annonces</title>
 </head>
 <body style="background: url(../images/cover2.jpg) no-repeat center center; background-size: cover; height: 610px; background-attachment: fixed;">

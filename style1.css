@@ -26,6 +26,7 @@ a {
 }
 
 .logo {
+  display: inline-table;
  font-family: "Polarise",arial, sans-serif;
  font-size:25px ;
  text-align:center;
@@ -57,12 +58,16 @@ a {
 
 .element {
   float: right;
-  margin: 2%;
+  margin: 1%;
   display: inline-block;
 }
 
+.element .selt {
+  display: inline-table;
+}
+
 .selt {
-  margin: 0.75em;
+  margin-left:0%;
   padding : 0.75em;
   border-radius: 10px;
   transition: 1s;

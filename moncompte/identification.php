@@ -49,7 +49,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../Style/style1.css">
+	<link rel="stylesheet" type="text/css" href="../style1.css">
 	<title>Untitled</title>
 </head>
 
