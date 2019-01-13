@@ -17,7 +17,7 @@ if(isset($_GET['nb'])){
 <html>
 <!-- jerome -->
 <head>
-	<title>template 1</title>
+	<title>Achats</title>
     <link rel="stylesheet" type="text/css" href="../style1.css">
 </head>
 <body>
