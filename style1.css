@@ -62,15 +62,6 @@ a {
   display: inline-block;
 }
 
-.smenu {
-  margin-bottom: 0;
-  background-color: yellow;
-}
-
-.smenu .slist {
-  background-color: purple;
-}
-
 .element .selt {
   display: inline-table;
 }

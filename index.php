@@ -11,6 +11,16 @@ include_once "needed.php";
 </head>
 <body>
 
+<style>
+.smenu {
+	margin-bottom: 0;
+	background-color: yellow;
+}
+
+.smenu .slist {
+	background-color: purple;
+}
+</style>
 	<!-- navigation -->
 	<div class="header" style="background: url(images/cover3.jpg) no-repeat center center; background-size: cover;">
 		<nav class="nav" id="nav">
