@@ -16,7 +16,7 @@ include_once "needed.php";
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-				<il class="selt" id="smenu">Annonces
+				<il class="selt" id="smenul">Annonces
 					<ul class="smenu">
 						<il class="slist" style="display: inherit;">Ventes</il>
 						<il class="slist" style="display: inherit;">Locations</il>

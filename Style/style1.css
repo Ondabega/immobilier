@@ -67,6 +67,10 @@ a {
   background-color: yellow;
 }
 
+.smenu .slist {
+  background-color: purple;
+}
+
 .element .selt {
   display: inline-table;
 }
