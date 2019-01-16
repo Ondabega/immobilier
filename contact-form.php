@@ -48,7 +48,7 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" style="background: url(images/cover2.jpg) no-repeat center center; background-size: cover;">
+	<div class="header" style="background: url(images/cover2.jpg) no-repeat center center; background-size: cover; height: 35em;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -94,7 +94,10 @@ include_once "needed.php";
 		        	<div class="margfoot">
 		        		<fieldset>
 		            		<legend>Contactez nous</legend>
-										<h3>
+										<div class="phrase">
+											<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
+									  </div>
 								</fieldset>
 							</div>
 
