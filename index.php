@@ -13,13 +13,38 @@ include_once "needed.php";
 
 <style>
 .smenu {
-	margin-bottom: 0;
-	background-color: yellow;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+.selt:hover .smenu {
+	display: block;
 }
 
 .smenu .slist {
-	background-color: purple;
+	position: relative;
+	display: block;
+	border-radius: 10px;
+	padding: 0.75em;
+	text-align: center;
+	text-decoration: none;
 }
+
+.smenu .slist:hover {
+	background-color: yellow;
+}
+
+#smenul:hover {
+	text-align: center;
+	padding: 0.75em 0 0 0;
+	transition: 0.1s;
+}
+
+#smenul {
+	transition: 0s;
+}
+
 </style>
 	<!-- navigation -->
 	<div class="header" style="background: url(images/cover3.jpg) no-repeat center center; background-size: cover;">
@@ -28,8 +53,8 @@ include_once "needed.php";
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<il class="selt" id="smenul">Annonces
 					<ul class="smenu">
-						<il class="slist" style="display: inherit;">Ventes</il>
-						<il class="slist" style="display: inherit;">Locations</il>
+						<il style="display: inherit;"><a class="slist" href="annonce/vente.php" style="color:black;">Ventes</a></il>
+						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:black;">Locations</a></il>
 					</ul>
 				</il>
 				<a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>
@@ -60,13 +85,13 @@ include_once "needed.php";
   		}
 		}
 	</script>
-	<div>
+	<article>
 		<h3 style="text-align:center; border:0; margin-bottom:0; margin-top: 5%;"> Salutations! </h3>
 		  <p class="phrase">
 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 			<hr class="separator" style="margin-left: 47%;">
-	</div>
-	<div style="margin">
+	</acticle>
+	<article style="margin">
 		<h3 style="text-align:center; border:0; margin-bottom:0; margin-top: 5%;"> Présentement! </h3>
 		  <p class="phrase">
 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -74,7 +99,7 @@ include_once "needed.php";
 		<h3 style="text-align:center; border:0; margin-bottom:0; margin-top: 5%;"> Au revoir, merci! </h3>
 			<p class="phrase">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		</p>
-	</div>
+	</article>
 
 	<!-- pied de page -->
 </style>

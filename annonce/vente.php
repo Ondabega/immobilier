@@ -48,6 +48,7 @@ if(isset($_GET['nb'])){
       <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
+        <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
             <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
           else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>

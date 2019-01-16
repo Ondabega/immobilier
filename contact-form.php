@@ -11,12 +11,53 @@ include_once "needed.php";
 </head>
 <body>
 
+	<style>
+	.smenu {
+		padding: 0;
+		margin: 0;
+		display: none;
+	}
+
+	.selt:hover .smenu {
+		display: block;
+	}
+
+	.smenu .slist {
+		position: relative;
+		display: block;
+		border-radius: 10px;
+		padding: 0.75em;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.smenu .slist:hover {
+		background-color: yellow;
+	}
+
+	#smenul:hover {
+		text-align: center;
+		padding: 0.75em 0 0 0;
+		transition: 0.1s;
+	}
+
+	#smenul {
+		transition: 0s;
+	}
+
+	</style>
+
 	<!-- navigation -->
 	<div class="header" style="background: url(images/cover2.jpg) no-repeat center center; background-size: cover;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-				<a href="annonce\index.php" class="selt" onclick="myFunction()">Annonces</a>
+				<il class="selt" id="smenul">Annonces
+					<ul class="smenu">
+						<il style="display: inherit;"><a class="slist" href="annonce/vente.php" style="color:black;">Ventes</a></il>
+						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:black;">Locations</a></il>
+					</ul>
+				</il>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
       <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
