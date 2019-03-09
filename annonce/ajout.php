@@ -129,7 +129,13 @@ else
 
     <div class="form-group">
   	<label>Ville</label>
-  	<input class="form-control" name="ville" type="text">
+		<select class="form-control" name="ville" >
+	    <?php
+	    $lieu = $bdd -> query('SELECT * FROM ville');
+	    while($ville = $lieu -> fetch()){ ?>
+	      <option value="<?php echo $ville['id']; ?>" ><?php echo $ville['nom']; ?></option>
+	  <?php  } ?>
+	  </select>
   	</div>
 
     <div class="form-group">

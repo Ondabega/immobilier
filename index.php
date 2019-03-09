@@ -76,7 +76,7 @@ include_once "needed.php";
 	  </span>
 	</h1>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="js/animation.js"></script>
 
 		<script type="text/javascript">
 		// Wrap every letter in a span
