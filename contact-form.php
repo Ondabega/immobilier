@@ -56,6 +56,7 @@ include_once "needed.php";
 					<ul class="smenu">
 						<il style="display: inherit;"><a class="slist" href="annonce/vente.php" style="color:black;">Ventes</a></il>
 						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:black;">Locations</a></il>
+						<il style="display: inherit;"><a class="slist" href="annonce/locationp.php" style="color:black;">Loca</a></il>
 					</ul>
 				</il>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}

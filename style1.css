@@ -68,9 +68,12 @@ a {
 }
 
 .selt {
+  width: 125px;
+  text-align: center;
+  justify-content: center;
   margin-left:0%;
   padding : 0.75em;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 1s;
   color: black;
   border: 0.5Px solid;
@@ -78,6 +81,7 @@ a {
 
 .selt:hover {
   background-color: orange;
+  opacity: .8;
   transition: .5s;
 }
 
