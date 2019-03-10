@@ -204,7 +204,7 @@ a {
 			font-size: 1.125em;
 		}
 
-		.contact .margfoot {
+	   .contact .margfoot {
 		    display: flex;
         justify-content: center;
         width: 500px;
@@ -213,3 +213,91 @@ a {
         margin-left: auto;
         margin-right: auto;
 		}
+
+    @keyframes outika {
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    #outik1 {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      stroke-width: 21;
+      animation: outika .9s linear forwards;
+    }
+
+
+    #outik2 {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      stroke-width: 23;
+      animation: outika .9s linear forwards .6s;
+    }
+
+
+    #outik3 {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      stroke-width: 23;
+      animation: outika .9s linear forwards 1.5s;
+    }
+
+    #outik4 {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      stroke-width: 21;
+      animation: outika .9s linear forwards 1.8s;
+    }
+
+    #outik5 {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      stroke-width: 23;
+      animation: outika .9s linear forwards 2.3s;
+    }
+
+
+    #mmo1 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 20;
+      animation: outika .9s linear forwards 3s;
+    }
+
+    #mmo2 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 20;
+      animation: outika .9s linear forwards 3.8s;
+    }
+
+
+    #mmo3 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 27;
+      animation: outika .9s linear forwards 4.5s;
+    }
+
+    #mmo4 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 25;
+      animation: outika .9s linear forwards 4.8s;
+    }
+
+    #mmo5 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 50;
+      animation: outika .9s linear forwards 4.9s;
+    }
+
+
+    #point1 {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      stroke-width: 100;
+      animation: outika .1s linear forwards 5.3s;
+    }
