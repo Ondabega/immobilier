@@ -85,6 +85,27 @@ a {
   transition: .5s;
 }
 
+.smenu .slist:hover {
+	background-color: orange;
+	opacity: .8;
+  transition: .5s;
+}
+
+#smenul:hover {
+	text-align: center;
+	padding: 0.75em 0 0 0;
+	transition: 0.1s;
+}
+
+#smenul {
+	transition: 0s;
+}
+
+#smenul:hover {
+	background-color: inherit;
+	cursor: default;
+}
+
 #connect {
   border: 1Px solid;
   font-weight: bold;
@@ -107,7 +128,7 @@ a {
 
 .phrase {
   padding: 20px;
-  margin: 20px;
+  margin: 20px 13%;
 }
 
   .boutton {

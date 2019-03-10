@@ -102,7 +102,7 @@ if(isset($_GET['nb'])){
       while ($Data = $Query->fetch()) {
        ?>
 
-          <a href="details.php?vente= <?php echo $Data['id'] ; ?>" >
+          <a href="descriptif.php?vente= <?php echo $Data['id'] ; ?>" >
             <div class="tbanner">
                 <div class="tcontain" style="height: 20em; width: 40%;">
                     <img src=<?php echo $Data['chemin'] ?> style="height: 100%  ; width: 100%;" >

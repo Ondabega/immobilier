@@ -69,14 +69,15 @@
   .smenu .slist {
   	position: relative;
   	display: block;
-  	border-radius: 10px;
+  	border-radius: 5px;
   	padding: 0.75em;
   	text-align: center;
   	text-decoration: none;
   }
 
   .smenu .slist:hover {
-  	background-color: yellow;
+  	background-color: orange;
+  	opacity: .8;
   }
 
   #smenul:hover {
@@ -89,6 +90,11 @@
   	transition: 0s;
   }
 
+  #smenul:hover {
+  	background-color: inherit;
+  	cursor: default;
+  }
+
   </style>
 
 <div class="header">
@@ -97,7 +103,7 @@
       <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
       <il class="selt" id="smenul">Annonces
         <ul class="smenu">
-          <il style="display: inherit;"><a class="slist" href="../annonce/vente.php" style="color:black;">Ventes</a></il>
+          <il style="display: inherit; margin-top: .80em;"><a class="slist" href="../annonce/vente.php" style="color:black;">Ventes</a></il>
           <il style="display: inherit;"><a class="slist" href="../annonce/location.php" style="color:black;">Locations</a></il>
           <il style="display: inherit;"><a class="slist" href="../annonce/locationp.php" style="color:black;">Loca</a></il>
         </ul>
