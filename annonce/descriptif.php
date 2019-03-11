@@ -67,8 +67,8 @@ if(isset($_GET['nb'])){
     }
 
 		.slide-container {
-			width: 800px;
-			height: 600px;
+			width: 600px;
+			height: 400px;
 			margin-top: 1em;
 			margin-bottom: 5em;
 			margin-left: auto;
@@ -78,8 +78,8 @@ if(isset($_GET['nb'])){
 		}
 
 		.image-container {
-			width: 2400px;
-			height: 600px;
+			width: 3500px;
+			height: 400px;
 			position: relative;
 			transition: left 1.5s;
 			-webkit-transition: left 1.5s;
@@ -88,8 +88,8 @@ if(isset($_GET['nb'])){
 		}
 
 		.slider-image {
-      width: 800px;
-      height: 600px;
+      width: 600px;
+      height: 400px;
 			float: left;
 			margin: 0;
 			padding: 0;
@@ -122,11 +122,19 @@ if(isset($_GET['nb'])){
 		}
 
 		#slider-image-2:target ~ .image-container{
-			left: -800px;
+			left: -600px;
 		}
 
 		#slider-image-3:target ~ .image-container{
-			left: -1600px;
+			left: -1200px;
+		}
+
+    #slider-image-4:target ~ .image-container{
+			left: -1800px;
+		}
+
+    #slider-image-5:target ~ .image-container{
+			left: -2400px;
 		}
 
 	</style>
@@ -159,15 +167,21 @@ if(isset($_GET['nb'])){
 			<span id="slider-image-1"></span>
 			<span id="slider-image-2"></span>
 			<span id="slider-image-3"></span>
+      <span id="slider-image-4"></span>
+      <span id="slider-image-5"></span>
 			<div class="image-container">
 				<img src="../images/cover2.jpg" class="slider-image">
 				<img src="../images/cover3.jpg" class="slider-image">
 				<img src="../images/cover4.jpg" class="slider-image">
+        <img src="../images/cover5.jpg" class="slider-image">
+        <img src="../images/cover6.jpg" class="slider-image">
 			</div>
 			<div class="button-container">
 				<a href="#slider-image-1" class="slider-button"></a>
 				<a href="#slider-image-2" class="slider-button"></a>
 				<a href="#slider-image-3" class="slider-button"></a>
+        <a href="#slider-image-4" class="slider-button"></a>
+        <a href="#slider-image-5" class="slider-button"></a>
 			</div>
 		</section>
 
