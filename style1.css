@@ -215,89 +215,81 @@ a {
 		}
 
     @keyframes outika {
-      100% {
-        stroke-dashoffset: 0;
-      }
-    }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
-    #outik1 {
-      stroke-dasharray: 300;
-      stroke-dashoffset: 300;
-      stroke-width: 21;
-      animation: outika .9s linear forwards;
-    }
-
-
-    #outik2 {
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      stroke-width: 23;
-      animation: outika .9s linear forwards .6s;
-    }
+#outik1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke-width: 21;
+  animation: outika .9s linear forwards;
+}
 
 
-    #outik3 {
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      stroke-width: 23;
-      animation: outika .9s linear forwards 1.5s;
-    }
-
-    #outik4 {
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      stroke-width: 21;
-      animation: outika .9s linear forwards 1.8s;
-    }
-
-    #outik5 {
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      stroke-width: 23;
-      animation: outika .9s linear forwards 2.3s;
-    }
+#outik2 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  stroke-width: 30;
+  animation: outika 1.3s linear forwards .7s;
+}
 
 
-    #mmo1 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 20;
-      animation: outika .9s linear forwards 3s;
-    }
-
-    #mmo2 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 20;
-      animation: outika .9s linear forwards 3.8s;
-    }
+#outik3 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 23;
+  animation: outika .9s linear forwards 1.6s;
+}
 
 
-    #mmo3 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 27;
-      animation: outika .9s linear forwards 4.5s;
-    }
-
-    #mmo4 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 25;
-      animation: outika .9s linear forwards 4.8s;
-    }
-
-    #mmo5 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 50;
-      animation: outika .9s linear forwards 4.9s;
-    }
+#outik4 {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  stroke-width: 26;
+  animation: outika .9s linear forwards 1.8s;
+}
 
 
-    #point1 {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      stroke-width: 100;
-      animation: outika .1s linear forwards 5.3s;
-    }
+#k1 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  stroke-width: 20;
+  animation: outika .9s linear forwards 2.6s;
+}
+
+#k2 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  stroke-width: 20;
+  animation: outika .9s linear forwards 2.7s;
+}
+#mo1 {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  stroke-width: 25;
+  animation: outika .9s linear forwards 3s;
+}
+
+#mo2 {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  stroke-width: 25;
+  animation: outika .9s linear forwards 3.8s;
+}
+
+
+#mo3 {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  stroke-width: 27;
+  animation: outika .9s linear forwards 4s;
+}
+
+#point1 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-width: 23;
+  animation: outika .4s linear forwards 4.3s;
+}
