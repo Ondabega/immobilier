@@ -56,6 +56,10 @@
 <body style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
 
   <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
   .smenu {
   	padding: 0;
   	margin: 0;
