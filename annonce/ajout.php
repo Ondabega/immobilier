@@ -62,8 +62,8 @@ else
 
     $file=upload($bdd,'file',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
     if($file < 0){$file=NULL;}
-    if($_POST['type']==0){
-    $query = $bdd -> prepare('INSERT INTO vente(prix,description,ville,image,depositaire) VALUES (:prix,:description,:ville,:image,:depositaire)');
+
+    $query = $bdd -> prepare('INSERT INTO vente(prix,description,ville,image,depositaire,type_vente,type_bien) VALUES (:prix,:description,:ville,:image,:depositaire,:type_vente,:type_bien)');
 
     $query -> execute(array(
       'prix' => $_POST['prix'],
@@ -71,35 +71,19 @@ else
       'ville' => $_POST['ville'],
       'image' => $file,
       'depositaire' => $_POST['depositaire'],
+			'type_vente' => $_POST['type_vente'],
+			'type_bien' => $_POST['type_bien'],
     ));
 
     if($query ==false){
       warning('Erreur','Les données entrées ne sont pas conformes.');
     }else{
-      success('Ajouté','Offre de vente bien ajoutée.');
+      success('Ajouté','Offre bien ajoutée.');
     }
-  }else{
-    $query = $bdd -> prepare('INSERT INTO location(prix,description,ville,image,depositaire) VALUES (:prix,:description,:ville,:image,:depositaire)');
-
-    $query -> execute(array(
-      'prix' => $_POST['prix'],
-      'description' => $_POST['Description'],
-      'ville' => $_POST['ville'],
-      'image' => $file,
-      'depositaire' => $_POST['depositaire'],
-    ));
-
-    if($query ==false){
-      warning('Erreur','Les données entrées ne sont pas conformes.');
-    }else{
-      success('Ajouté','Offre de location bien ajoutée.');
-
-    }
-
-  }}
+  }
   ?>
   <div class="boutons_nav" style="display: flex; justify-content: center;">
-    <a href="ajout.php" class="bouton_menu bouton_nav_selected" style="margin-right:20%">Ajout</a>
+    <a href="ajout.php" class="bouton_menu bouton_nav_selected" style="margin-right:20%">Ajout de bien</a>
     <a href="suppression.php" class="bouton_menu">Modification/Suppression</a>
   </div>
 
@@ -110,12 +94,20 @@ else
   <form method="post" style="margin-top:20px;" enctype="multipart/form-data">
 
   	<div class="form-group">
-  	<label>Type</label>
-  	<select name="type" class="form-control">
+  	<label>Type de vente</label>
+  	<select name="type_vente" class="form-control">
   		<option value="0" selected="selected">vente</option>
   		<option value="1">location</option>
   	</select>
   	</div>
+
+		<div class="form-group">
+		<label>Type de bien</label>
+		<select name="type_bien" class="form-control">
+			<option value="0" selected="selected">Maison</option>
+			<option value="1">Appartement</option>
+		</select>
+		</div>
 
     <div class="form-group">
   	<label>Prix</label>

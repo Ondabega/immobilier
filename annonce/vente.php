@@ -42,6 +42,46 @@ if(isset($_GET['nb'])){
             margin: 1%;
             padding: 1%;
         }
+
+        .smenu {
+        	padding: 0;
+        	margin: 0;
+        	display: none;
+        }
+
+        .selt:hover .smenu {
+        	display: block;
+        }
+
+        .smenu .slist {
+        	position: relative;
+        	display: block;
+        	border-radius: 5px;
+        	padding: 0.75em;
+        	background-color: inherit;
+        	text-align: center;
+        	text-decoration: none;
+        }
+
+        .smenu .slist:hover {
+        	background-color: orange;
+        	opacity: .8;
+        }
+
+        #smenul:hover {
+        	text-align: center;
+        	padding: 0.75em 0 0 0;
+        	transition: 0.1s;
+        }
+
+        #smenul {
+        	transition: 0s;
+        }
+
+        #smenul:hover {
+        	background-color: inherit;
+        	cursor: default;
+        }
     </style>
 
     <!-- navigation -->
@@ -51,9 +91,16 @@ if(isset($_GET['nb'])){
         <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
         <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
-            <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-          else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-          <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
+          <?php if(!empty($_SESSION['admin'])){ echo "
+  					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
+  					<ul class='smenu'>
+  						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='ajout.php' style='color:black;'>Biens</a></il>
+  						<il style='display: inherit;'><a class='slist' href='ajout_villes.php' style='color:black;'>Villes</a></il>
+
+  					</ul>
+  				</il> " ;} ?>
+  				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+  			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
         </div>
         <div class="logow">
           <a href="../index.php" class="logo" > Audrey Brezout </a>
@@ -86,14 +133,14 @@ if(isset($_GET['nb'])){
       <?php
 
       if($recherche>0){
-      $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i LIMIT 7  OFFSET :nb') ;
+      $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
       $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
       $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
       $Query->execute();}
 
 
-      else{$Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id LIMIT 7 OFFSET :nb ') ;
+      else{$Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0  LIMIT 7 OFFSET :nb ') ;
         $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
         $Query->execute();
       }
@@ -132,11 +179,11 @@ if(isset($_GET['nb'])){
       }
 
       if($recherche>0){$test = $bdd->prepare('SELECT * FROM vente
-          WHERE vente.ville= :i LIMIT 7 OFFSET :nb');
+          WHERE vente.ville= :i AND type_vente=0 LIMIT 7 OFFSET :nb');
       $test->bindValue(':i',$recherche, PDO::PARAM_INT);
       $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
       $test->execute();
-    }else{$test = $bdd->prepare('SELECT * FROM vente LIMIT 7 OFFSET :nb');
+    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=0 LIMIT 7 OFFSET :nb');
         $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
         $test->execute();
        }

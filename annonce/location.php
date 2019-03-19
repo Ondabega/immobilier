@@ -1,11 +1,23 @@
 <?php
 include_once "../needed.php";
+
+$recherche = -1;
+$debut=0;
+
+if (isset($_GET["recherche"])){
+    $recherche = $_GET["recherche"];
+}
+
+if(isset($_GET['nb'])){
+  $debut=$_GET['nb'];
+}
 ?>
 
 <!DOCTYPE html>
 <html>
+<!-- jerome -->
 <head>
-	<title>template 1</title>
+	<title>Achats</title>
     <link rel="stylesheet" type="text/css" href="../style1.css">
 </head>
 <body>
@@ -21,6 +33,8 @@ include_once "../needed.php";
             margin: 2%;
             display: flex;
             flex-direction: row;
+            border: 1px solid black;
+            border-radius: 2em;
         }
 
         .tcontain {
@@ -28,40 +42,156 @@ include_once "../needed.php";
             margin: 1%;
             padding: 1%;
         }
+
+        .smenu {
+        	padding: 0;
+        	margin: 0;
+        	display: none;
+        }
+
+        .selt:hover .smenu {
+        	display: block;
+        }
+
+        .smenu .slist {
+        	position: relative;
+        	display: block;
+        	border-radius: 5px;
+        	padding: 0.75em;
+        	background-color: inherit;
+        	text-align: center;
+        	text-decoration: none;
+        }
+
+        .smenu .slist:hover {
+        	background-color: orange;
+        	opacity: .8;
+        }
+
+        #smenul:hover {
+        	text-align: center;
+        	padding: 0.75em 0 0 0;
+        	transition: 0.1s;
+        }
+
+        #smenul {
+        	transition: 0s;
+        }
+
+        #smenul:hover {
+        	background-color: inherit;
+        	cursor: default;
+        }
     </style>
 
     <!-- navigation -->
       <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-				<a href="vente.php" class="selt" onclick="myFunction()">Ventes</a>
-				<a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
+        <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
+        <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
-            <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-          else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-          <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
+          <?php if(!empty($_SESSION['admin'])){ echo "
+  					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
+  					<ul class='smenu'>
+  						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='ajout.php' style='color:black;'>Biens</a></il>
+  						<il style='display: inherit;'><a class='slist' href='ajout_villes.php' style='color:black;'>Villes</a></il>
+
+  					</ul>
+  				</il> " ;} ?>
+  				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
+  			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
         </div>
         <div class="logow">
           <a href="../index.php" class="logo" > Audrey Brezout </a>
         </div>
       </nav>
 
-    <div class="tbanner">
-        <div class="tcontain" style="background-color: black; height: 15em; width: 40%;">
-            <img src="">
-        </div>
-        <div class="tcontain" style="width: 60%;">
-            <h3>Product Title</h3>
 
-            <p class="type">type</p>
-            <br>
-            <p class="ville">City</p>
-            <br>
-            <p>Product description... Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <br>
-            <p class="prix">$21.000</p>
-        </div>
-    </div>
+        <form class="form-inline">
+        <div class="form-group">
+          <label>Recherche</label>
+          <select class="form-control" name="recherche" >
+            <option value="">Selectionnez une ville </option>
 
-</body>
-</html>
+            <?php
+            $profil = $bdd -> query('SELECT * FROM ville');
+            while($personne = $profil -> fetch()){ ?>
+              <option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']; ?></option>
+          <?php  } ?>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-default">Rechercher</button>
+
+      </form>
+
+
+
+
+
+      <div class="conteneur_alerte">
+      <?php
+
+      if($recherche>0){
+      $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=1 LIMIT 7  OFFSET :nb') ;
+
+      $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+      $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+      $Query->execute();}
+
+
+      else{$Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=1  LIMIT 7 OFFSET :nb ') ;
+        $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+        $Query->execute();
+      }
+
+
+      while ($Data = $Query->fetch()) {
+       ?>
+
+          <a href="descriptif.php?vente= <?php echo $Data['id'] ; ?>" >
+            <div class="tbanner">
+                <div class="tcontain" style="height: 20em; width: 40%;">
+                    <img src=<?php echo $Data['chemin'] ?> style="height: 100%  ; width: 100%;" >
+                </div>
+                <div class="tcontain" style="width: 60%;">
+                    <h3><?php echo $Data['nom'] ?></h3>
+
+                    <br>
+                    <p><?php echo $Data['description'] ?>.</p>
+                    <br>
+                    <p class="prix"><?php echo $Data['prix'] ?></p>
+                </div>
+            </div>
+      </a>
+
+      <?php  }
+
+
+      ?>
+      </div>
+
+      <?php
+      if($debut > 6){
+        ?>
+        <a href="vente.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut-7;?>" class="btn btn-default">Elements précédents</a>
+      <?php
+      }
+
+      if($recherche>0){$test = $bdd->prepare('SELECT * FROM vente
+          WHERE vente.ville= :i AND type_vente=1 LIMIT 7 OFFSET :nb');
+      $test->bindValue(':i',$recherche, PDO::PARAM_INT);
+      $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
+      $test->execute();
+    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=1 LIMIT 7 OFFSET :nb');
+        $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
+        $test->execute();
+       }
+
+      if($test -> fetch()){ ?>
+        <a href="vente.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut+7;?>" class="btn btn-default">Elements suivants</a>
+      <?php
+      }
+
+
+       ?>
