@@ -1,16 +1,5 @@
 <?php
 include_once "../needed.php";
-
-$recherche = -1;
-$debut=0;
-
-if (isset($_GET["recherche"])){
-    $recherche = $_GET["recherche"];
-}
-
-if(isset($_GET['nb'])){
-  $debut=$_GET['nb'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +67,7 @@ if(isset($_GET['nb'])){
 		}
 
 		.image-container {
-			width: 3500px;
+			width: 5000px;
 			height: 400px;
 			position: relative;
 			transition: left 1.5s;
@@ -125,7 +114,7 @@ if(isset($_GET['nb'])){
 			left: -600px;
 		}
 
-		#slider-image-3:target ~ .image-container{
+    #slider-image-3:target ~ .image-container{
 			left: -1200px;
 		}
 
@@ -135,6 +124,18 @@ if(isset($_GET['nb'])){
 
     #slider-image-5:target ~ .image-container{
 			left: -2400px;
+		}
+
+    #slider-image-6:target ~ .image-container{
+			left: -3000px;
+		}
+
+    #slider-image-7:target ~ .image-container{
+			left: -3600px;
+		}
+
+    #slider-image-8:target ~ .image-container{
+			left: -4200px;
 		}
 
 	</style>
@@ -162,26 +163,107 @@ if(isset($_GET['nb'])){
 		</header>
 	</section>
 
+<?php
+  if (!isset($_GET["vente"])){
+    echo "ERREUR DE SESSION";
+
+  }else{
+    $vente=$_GET["vente"]; ?>
+
 	<article>
 		<section class="slide-container">
 			<span id="slider-image-1"></span>
-			<span id="slider-image-2"></span>
+		  <span id="slider-image-2"></span>
 			<span id="slider-image-3"></span>
-      <span id="slider-image-4"></span>
-      <span id="slider-image-5"></span>
+     <span id="slider-image-4"></span>
+     <span id="slider-image-5"></span>
+      <span id="slider-image-6"></span>
+      <span id="slider-image-7"></span>
+      <span id="slider-image-8"></span>
 			<div class="image-container">
-				<img src="../images/cover2.jpg" class="slider-image">
-				<img src="../images/cover3.jpg" class="slider-image">
-				<img src="../images/cover4.jpg" class="slider-image">
-        <img src="../images/cover5.jpg" class="slider-image">
-        <img src="../images/cover6.jpg" class="slider-image">
+        <?php
+
+        $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id WHERE vente.id= :i') ;
+
+        $Query->bindValue(':i',(int) $vente,PDO::PARAM_INT);
+        $Query->execute();
+        $Data = $Query->fetch();
+        echo "<img src=".$Data['chemin']." class='slider-image'>";
+        ?>
+        <?php
+        if($Data['image2']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query2 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query2->bindValue(':i',(int) $Data['image2'],PDO::PARAM_INT);
+        $Query2->execute();
+        $Data2=$Query2->fetch();
+        echo "<img src=".$Data2['chemin']." class='slider-image'>";}
+
+       if($Data['image3']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query3 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query3->bindValue(':i',(int) $Data['image3'],PDO::PARAM_INT);
+        $Query3->execute();
+        $Data3=$Query3->fetch();
+        echo "<img src=".$Data3['chemin']." class='slider-image'>";}
+
+        if($Data['image4']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query4 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query4->bindValue(':i',(int) $Data['image4'],PDO::PARAM_INT);
+        $Query4->execute();
+        $Data4=$Query4->fetch();
+        echo "<img src=".$Data4['chemin']." class='slider-image'>";}
+
+        if($Data['image5']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query5 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query5->bindValue(':i',(int) $Data['image5'],PDO::PARAM_INT);
+        $Query5->execute();
+        $Data5=$Query5->fetch();
+        echo "<img src=".$Data5['chemin']." class='slider-image'>";}
+
+        if($Data['image6']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query6 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query6->bindValue(':i',(int) $Data['image6'],PDO::PARAM_INT);
+        $Query6->execute();
+        $Data6=$Query6->fetch();
+        echo "<img src=".$Data6['chemin']." class='slider-image'>";}
+
+        if($Data['image7']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query7 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query7->bindValue(':i',(int) $Data['image7'],PDO::PARAM_INT);
+        $Query7->execute();
+        $Data7=$Query7->fetch();
+        echo "<img src=".$Data7['chemin']." class='slider-image'>";}
+
+        if($Data['image8']==0){ ?>
+          <img src="../images/carroussel_base.jpg" class="slider-image">
+        <?php }else{
+        $Query8 = $bdd->prepare('SELECT * FROM files WHERE files.id= :i') ;
+        $Query8->bindValue(':i',(int) $Data['image8'],PDO::PARAM_INT);
+        $Query8->execute();
+        $Data8=$Query8->fetch();
+        echo "<img src=".$Data8['chemin']." class='slider-image'>";}
+         ?>
 			</div>
 			<div class="button-container">
 				<a href="#slider-image-1" class="slider-button"></a>
 				<a href="#slider-image-2" class="slider-button"></a>
 				<a href="#slider-image-3" class="slider-button"></a>
         <a href="#slider-image-4" class="slider-button"></a>
-        <a href="#slider-image-5" class="slider-button"></a>
+       <a href="#slider-image-5" class="slider-button"></a>
+        <a href="#slider-image-6" class="slider-button"></a>
+        <a href="#slider-image-7" class="slider-button"></a>
+        <a href="#slider-image-8" class="slider-button"></a>
 			</div>
 		</section>
 
@@ -190,14 +272,18 @@ if(isset($_GET['nb'])){
 
       </div>
 			<div class="discribe">
-        <h2 style="border-bottom-style: none; margin-bottom:auto;">T3 Lorem ipsum dolor sit amet</h2>
-        <p class="cout" style="margin:0.2em 0 2em 0; padding:0;">330€ / jour</p>
+        <h2 style="border-bottom-style: none; margin-bottom:auto;"><?php echo $Data['titre']; ?></h2>
+        <p class="cout" style="margin:0.2em 0 2em 0; padding:0;"><?php echo $Data['prix']."$/mois"; ?></p>
 				<h4 style="margin-bottom: .5em;">Description</h4>
-				<p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><?php echo $Data['description']; ?>
+				<p style="text-align: left;"><?php echo $Data['prix']; ?></p>
 				<h4 style="margin-bottom: .5em;">Criteres et localisation</h4>
-				<p>Lorem: ipsum</p>
-				<p>jardin: nope</p>
-				<p>Lieu: ipsum</p>
+				<p>Lieu: <?php   $query = $bdd->prepare('SELECT * FROM ville WHERE ville.id= :i') ;
+         $query->bindValue(':i',(int) $Data['ville'], PDO::PARAM_INT);
+        $query->execute();
+        $daa = $query->fetch();
+        echo $daa['nom'] ?></p>
+				<p>Type: <?php  if($Data['type_bien']==0){echo " Maison";}else{echo "Appartement";} ?></p>
 				<div class="carte" style="background-color: grey; height: 90px; width: 40em; margin: 1.5em 0 0 0;">ici la map</div>
 			</div>
 			<div style="text-align: center; margin-bottom: 5em;"><a href="../contact-form.php"><button class="selt">Nous contacter</button></a></div>
@@ -209,6 +295,9 @@ if(isset($_GET['nb'])){
 
 		</section>
 	</article>
+
+
+<?php }?>
 
   <footer class="footer" style="margin-bottom: 0px;">
   			<div class="row">
@@ -233,7 +322,5 @@ if(isset($_GET['nb'])){
   					</div> <!-- End Col -->
   				</div>
   </footer>
-
-
 </body>
 </html>

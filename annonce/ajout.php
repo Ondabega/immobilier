@@ -61,18 +61,41 @@ else
   if(!empty($_POST)){
 
     $file=upload($bdd,'file',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
-    if($file < 0){$file=NULL;}
+    if($file < 0){warning('Erreur',"Un problème est survenu avec l'image principale");}else{
 
-    $query = $bdd -> prepare('INSERT INTO vente(prix,description,ville,image,depositaire,type_vente,type_bien) VALUES (:prix,:description,:ville,:image,:depositaire,:type_vente,:type_bien)');
+			$file2=upload($bdd,'file2',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file2 < 0){$file2=0;}
+			$file3=upload($bdd,'file3',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file3 < 0){$file3=0;}
+			$file4=upload($bdd,'file4',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file4 < 0){$file4=0;}
+			$file5=upload($bdd,'file5',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file5 < 0){$file5=0;}
+			$file6=upload($bdd,'file6',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file6 < 0){$file6=0;}
+			$file7=upload($bdd,'file7',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file7 < 0){$file7=0;}
+			$file8=upload($bdd,'file8',"../ressources",5048576,array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'JPG' , 'JPEG' , 'GIF' , 'PNG' ));
+			if($file8 < 0){$file8=0;}
+
+    $query = $bdd -> prepare('INSERT INTO vente(prix,description,titre,ville,image,depositaire,type_vente,type_bien,image2,image3,image4,image5,image6,image7,image8) VALUES (:prix,:description,:titre,:ville,:image,:depositaire,:type_vente,:type_bien,:image2,:image3,:image4,:image5,:image6,:image7,:image8)');
 
     $query -> execute(array(
       'prix' => $_POST['prix'],
       'description' => $_POST['Description'],
+			'titre' => $_POST['titre'],
       'ville' => $_POST['ville'],
       'image' => $file,
       'depositaire' => $_POST['depositaire'],
 			'type_vente' => $_POST['type_vente'],
 			'type_bien' => $_POST['type_bien'],
+			'image2' => $file2,
+			'image3' => $file3,
+			'image4' => $file4,
+			'image5' => $file5,
+			'image6' => $file6,
+			'image7' => $file7,
+			'image8' => $file8,
     ));
 
     if($query ==false){
@@ -80,7 +103,7 @@ else
     }else{
       success('Ajouté','Offre bien ajoutée.');
     }
-  }
+  }}
   ?>
   <div class="boutons_nav" style="display: flex; justify-content: center;">
     <a href="ajout.php" class="bouton_menu bouton_nav_selected" style="margin-right:20%">Ajout de bien</a>
@@ -119,6 +142,11 @@ else
   	<input class="form-control" name="Description" type="text">
   	</div>
 
+		<div class="form-group">
+  	<label>Titre</label>
+  	<input class="form-control" name="titre" type="text">
+  	</div>
+
     <div class="form-group">
   	<label>Ville</label>
 		<select class="form-control" name="ville" >
@@ -130,33 +158,77 @@ else
 	  </select>
   	</div>
 
+
+		<label>Depositaire</label>
+		<select class="form-control" name="depositaire" >
+			<?php
+			$profil = $bdd -> query('SELECT * FROM utilisateur');
+			while($personne = $profil -> fetch()){ ?>
+				<option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']." ".$personne['prenom']; ?></option>
+		<?php  } ?>
+		</select>
+
     <div class="form-group">
-  		<label>Image :     </label>
+  		<label>Image principale :     </label>
   		<input name="file" type="file">
   	</div>
-    <div class="form-group">
 
-  <label>Depositaire</label>
-  <select class="form-control" name="depositaire" >
-    <?php
-    $profil = $bdd -> query('SELECT * FROM utilisateur');
-    while($personne = $profil -> fetch()){ ?>
-      <option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']." ".$personne['prenom']; ?></option>
-  <?php  } ?>
-  </select>
+
+			<div class="form-group">
+	  		<label>Image2 :     </label>
+	  		<input name="file2" type="file">
+	  	</div>
+
+
+				<div class="form-group">
+		  		<label>Image3 :     </label>
+		  		<input name="file3" type="file">
+		  	</div>
+
+					<div class="form-group">
+			  		<label>Image4 :     </label>
+			  		<input name="file4" type="file">
+			  	</div>
+
+
+						<div class="form-group">
+				  		<label>Image5 :     </label>
+				  		<input name="file5" type="file">
+				  	</div>
+
+
+							<div class="form-group">
+					  		<label>Image6 :     </label>
+					  		<input name="file6" type="file">
+					  	</div>
+
+
+
+								<div class="form-group">
+						  		<label>Image7 :     </label>
+						  		<input name="file7" type="file">
+						  	</div>
+
+
+					<div class="form-group">
+							<label>Image8 :     </label>
+				  		<input name="file8" type="file">
+					  	</div>
+
 </div>
-
-
-  	<input value="Ajouter" class="btn btn-default" type="submit">
-
-
-  </form>
 
 </div>
 <div class="col-md-2">
 </div>
 
+<div class="row">
+	<input value="Ajouter" class="btn btn-default" type="submit">
+
+
+</form>
 </div>
+
+</br></br></br>
 
 
 <?php

@@ -133,14 +133,14 @@ if(isset($_GET['nb'])){
       <?php
 
       if($recherche>0){
-      $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+      $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
       $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
       $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
       $Query->execute();}
 
 
-      else{$Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0  LIMIT 7 OFFSET :nb ') ;
+      else{$Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0  LIMIT 7 OFFSET :nb ') ;
         $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
         $Query->execute();
       }
@@ -149,7 +149,7 @@ if(isset($_GET['nb'])){
       while ($Data = $Query->fetch()) {
        ?>
 
-          <a href="descriptif.php?vente= <?php echo $Data['id'] ; ?>" >
+          <a href="descriptif.php?vente= <?php echo $Data['venteid'] ; ?>" >
             <div class="tbanner">
                 <div class="tcontain" style="height: 20em; width: 40%;">
                     <img src=<?php echo $Data['chemin'] ?> style="height: 100%  ; width: 100%;" >
