@@ -33,7 +33,7 @@ include_once "needed.php";
 }
 
 .smenu .slist:hover {
-	background-color: orange;
+	background-color: #3C7AB3;
 	opacity: .8;
 }
 
@@ -60,9 +60,9 @@ include_once "needed.php";
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<il class="selt" id="smenul">Annonces
 					<ul class="smenu">
-						<il style="display: inherit; margin-top: .80em;"><a class="slist" href="annonce/vente.php" style="color:black;">Ventes</a></il>
-						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:black;">Locations</a></il>
-						<il style="display: inherit;"><a class="slist" href="annonce/locationp.php" style="color:black;">Loca</a></il>
+						<il style="display: inherit; margin-top: .80em;"><a class="slist" href="annonce/vente.php" style="color:white;">Ventes</a></il>
+						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:white;">Locations</a></il>
+						<il style="display: inherit;"><a class="slist" href="annonce/locationp.php" style="color:white;">Loca</a></il>
 					</ul>
 				</il>
 				<a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>

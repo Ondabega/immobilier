@@ -15,7 +15,7 @@ a {
       border: none;
       margin-right: 47%;
       margin-left: 47%;
-      background-color: #27C6FF;
+      background-color: #3C7AB3;
     }
 
 @font-face {
@@ -32,7 +32,7 @@ a {
  font-size:25px ;
  text-align:center;
  font-weight:bold;
- color: black;
+ color: white;
 }
 
 .header {
@@ -60,7 +60,7 @@ a {
 .element {
   float: right;
   margin: 1%;
-  display: inline-block;
+  display: inline-block
 }
 
 .element .selt {
@@ -75,20 +75,24 @@ a {
   padding : 0.75em;
   border-radius: 5px;
   transition: 1s;
-  color: black;
-  border: 0.5Px solid;
+  color: white;
+  border: 0Px solid;
 }
 
 .selt:hover {
-  background-color: orange;
-  opacity: .8;
+  background-color: #3C7AB3;
+  color:white;
   transition: .5s;
 }
 
 .smenu .slist:hover {
-	background-color: orange;
-	opacity: .8;
+  background-color: #3C7AB3;
+  color:white;
   transition: .5s;
+}
+
+.form-inline {
+  margin: 2%;
 }
 
 #smenul:hover {
