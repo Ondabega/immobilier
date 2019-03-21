@@ -1,3 +1,24 @@
+
+
+@media screen and (max-device-width: 600px) {
+			body, html {
+				font-size: 1em;
+			}
+      .logow {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .logow {
+        display: none;
+      }
+		}
+
+
+
+/************************************/
+
 * {
   padding: 0;
   margin: 0;
@@ -58,9 +79,10 @@ a {
 }
 
 .element {
-  float: right;
   margin: 1%;
-  display: inline-block
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
 }
 
 .element .selt {
@@ -116,6 +138,8 @@ a {
 }
 
 .logow {
+  float: left;
+  width: 5em;
   margin: 1%;
 }
 
