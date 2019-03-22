@@ -1,28 +1,11 @@
 
-
-@media screen and (max-device-width: 600px) {
-			body, html {
-				font-size: 1.125em;
-			}
-
-			#headcontact{
-				height: 15em;
-			}
-
-    }
-
-    @media screen and (max-width: 600px) {
-
-		}
-
-
-
 /************************************/
 
 * {
   padding: 0;
   margin: 0;
   font-family: Verdana;
+	font-size: 105%;
 }
 
 a {
@@ -198,8 +181,8 @@ a {
     .icon {
 			display: inline-block;
 			margin: 4%;
-			height: 20px;
-			width: 20px;
+			height: 5%;
+			width: 5%;
 		}
 
 		.copyright-text {

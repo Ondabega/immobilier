@@ -113,7 +113,7 @@
     else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
     </div>
   </nav>
-  <div style="margin-top: 20%; ">
+  <div style="margin-top: 18em; ">
     <div class="row">
         <div class="col-md-4"></div>
       <div class="col-md-4">
