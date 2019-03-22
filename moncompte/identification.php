@@ -53,12 +53,13 @@
 	<title>Untitled</title>
 </head>
 
-<body style="background: url(../images/cover4.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
+<body style="background: url(../images/connect.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
 
   <style>
   * {
     padding: 0;
     margin: 0;
+    color: white;
   }
   .smenu {
   	padding: 0;
@@ -77,11 +78,6 @@
   	padding: 0.75em;
   	text-align: center;
   	text-decoration: none;
-  }
-
-  .smenu .slist:hover {
-  	background-color: orange;
-  	opacity: .8;
   }
 
   #smenul:hover {
@@ -116,10 +112,6 @@
       <?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
     else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
     </div>
-    <div class="logow">
-      <a href="../index.php" class="logo" > Audrey Brezout </a>
-
-    </div>
   </nav>
   <div style="margin-top: 20%; ">
     <div class="row">
@@ -127,7 +119,7 @@
       <div class="col-md-4">
     <h3>Identifiez-vous</h3>
 
-        <form action=<?php echo $direction?> method="post" style="padding-top:20px; width : 400px;" >
+        <form action=<?php echo $direction?> method="post" style="padding-top:20px; width : 50%; margin-left: 25%; " >
             <?php
               if(!empty($errorMessage))
               {

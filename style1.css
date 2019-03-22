@@ -2,17 +2,17 @@
 
 @media screen and (max-device-width: 600px) {
 			body, html {
-				font-size: 1em;
+				font-size: 1.125em;
 			}
-      .logow {
-        display: none;
-      }
+
+			#headcontact{
+				height: 15em;
+			}
+
     }
 
     @media screen and (max-width: 600px) {
-      .logow {
-        display: none;
-      }
+
 		}
 
 
@@ -48,7 +48,7 @@ a {
 }
 
 .logo {
-  display: inline-table;
+ display: inline-table;
  font-family: "Polarise",arial, sans-serif;
  font-size:25px ;
  text-align:center;
@@ -81,8 +81,8 @@ a {
 .element {
   margin: 1%;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 .element .selt {
@@ -100,6 +100,7 @@ a {
   color: white;
   border: 0Px solid;
 }
+
 
 .selt:hover {
   background-color: #3C7AB3;
@@ -138,8 +139,8 @@ a {
 }
 
 .logow {
-  float: left;
-  width: 5em;
+  display: flex;
+	justify-content: center;
   margin: 1%;
 }
 

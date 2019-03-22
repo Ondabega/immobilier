@@ -32,7 +32,7 @@ include_once "needed.php";
 	}
 
 	.smenu .slist:hover {
-		background-color: orange;
+		background-color: #3C7AB3;
 		opacity: .8;
 	}
 
@@ -40,6 +40,7 @@ include_once "needed.php";
 		text-align: center;
 		padding: 0.75em 0 0 0;
 		transition: 0.1s;
+		color:white;
 	}
 
 	#smenul {
@@ -54,7 +55,7 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" style="background: url(images/cover2.jpg) no-repeat center center; background-size: cover; height: 35em;">
+	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 20%;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -69,13 +70,9 @@ include_once "needed.php";
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
       <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
-			<div class="logow">
-				<a href="index.php" class="logo" > Audrey Brezout </a>
-
-			</div>
 		</nav>
 		<div>
-			<h1 class="accueil">Contact  Us</h1>
+			<h1 class="accueil" style="color:white;">Contact  Us</h1>
 		</div>
 	</div>
 
@@ -101,6 +98,9 @@ include_once "needed.php";
 		        	<div class="margfoot">
 		        		<fieldset>
 		            		<legend>Contactez nous</legend>
+										<div class="logow">
+											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
+										</div>
 										<div class="phrase">
 											<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>

@@ -54,7 +54,7 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/cover.jpg) no-repeat center center; background-size: cover;">
+	<div class="header" style="background: url(images/img1.jpg) no-repeat center center; background-size: cover;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -76,10 +76,6 @@ include_once "needed.php";
 				</il> " ;} ?>
 				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
 			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-			</div>
-			<div class="logow">
-				<a href="#index" class="logo" > Audrey Brezout </a>
-
 			</div>
 		</nav>
 		<div>

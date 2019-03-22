@@ -41,9 +41,6 @@ include_once "../needed.php";
           else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
           <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
         </div>
-        <div class="logow">
-          <a href="../index.php" class="logo" > Audrey Brezout </a>
-        </div>
       </nav>
 
     <div class="tbanner">

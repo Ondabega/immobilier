@@ -102,9 +102,6 @@ if(isset($_GET['nb'])){
   				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
         </div>
-        <div class="logow">
-          <a href="../index.php" class="logo" > Audrey Brezout </a>
-        </div>
       </nav>
 
 
