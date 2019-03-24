@@ -1,5 +1,6 @@
 @media screen and (max-device-width: 600px) {
 			body, html {
+				font-size: 115%;
 			}
 			.real .container{
 				}
