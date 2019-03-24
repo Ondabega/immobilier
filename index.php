@@ -6,6 +6,10 @@ include_once "needed.php";
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/x-svg" href="icons/logo-bleu.svg">
+	<meta name="author" content="Domi and Thomas">
+	<meta name="description" content="Entreprise, Agence immobilière">
+	<meta name="keywords" content="istres, immobilier, martigues, Audrey Brezout, Entreprise, immo, BoutikImo,">
 	<link rel="stylesheet" type="text/css" href="style1.css">
 	<title>index</title>
 </head>
@@ -177,7 +181,7 @@ include_once "needed.php";
 
 				<div class="footer-bottom">
 					<div class="copyright-text">
-						<p>CopyRight © 2018 Name</p>
+						<p>CopyRight © 2019 Name</p>
 					</div> <!-- End Col -->
 				</div>
 </footer>

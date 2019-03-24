@@ -5,7 +5,7 @@
   padding: 0;
   margin: 0;
   font-family: Verdana;
-	font-size: 105%;
+	font-size: 100%;
 }
 
 a {
@@ -95,6 +95,10 @@ a {
   background-color: #3C7AB3;
   color:white;
   transition: .5s;
+}
+
+.smenu .slist {
+	color:white;
 }
 
 .form-inline {
@@ -307,3 +311,63 @@ a {
       stroke-width: 9;
       animation: outika .2s linear forwards 5.4s;
     }
+
+		/*****************new slider*************/
+		.real {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 150px;
+		padding-top: 60px;
+	}
+
+	.real h2 {
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	.real .container{
+			display: block;
+			width: 90%;
+			height: 90%;
+			margin: auto;
+			padding: 0;
+			overflow-y: hidden;
+			background-size: cover;
+			margin-top: 3%;
+		}
+
+		.real .slide-img{
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.real .inbanner {
+			display: block;
+			padding-top: 7em;
+			}
+
+		.inbanner h3{
+			color: white;
+			margin-bottom: 5%;
+			font-size: 3em;
+			text-shadow:3px 3px 5px black;
+		}
+
+		.real #one { background-image: url("images/one.jpg"); }
+		.real #two { background-image: url("images/six.jpg"); }
+		.real #three { background-image: url("images/three.jpg"); }
+		.real #four { background-image: url("images/ban2.jpg"); }
+
+		.real .zap{
+			top: 0;
+			width: 10%;
+			height: 100%;
+			cursor: pointer;
+			background: rgba(88,88,88,.2);
+		}
+
+		.real #prev { left: 0; float: left;}
+		.real #nxt { right: 0; float: right;}

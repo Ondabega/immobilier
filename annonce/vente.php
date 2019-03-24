@@ -85,7 +85,7 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
+      <nav class="nav" id="nav" style="height= 3em; background: rgba(3, 3, 3, 0.39); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
