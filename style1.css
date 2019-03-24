@@ -1,3 +1,10 @@
+@media screen and (max-device-width: 600px) {
+			body, html {
+			}
+			.real .container{
+				}
+		}
+
 
 /************************************/
 
@@ -327,8 +334,8 @@ a {
 
 	.real .container{
 			display: block;
-			width: 90%;
-			height: 90%;
+			width: 75%;
+			height: 37em;
 			margin: auto;
 			padding: 0;
 			overflow-y: hidden;
@@ -356,10 +363,10 @@ a {
 			text-shadow:3px 3px 5px black;
 		}
 
-		.real #one { background-image: url("images/one.jpg"); }
-		.real #two { background-image: url("images/six.jpg"); }
-		.real #three { background-image: url("images/three.jpg"); }
-		.real #four { background-image: url("images/ban2.jpg"); }
+		.real #one { background-image: url("images/cover3.jpg"); background-size: cover;}
+		.real #two { background-image: url("images/cover2.jpg"); background-size: cover;}
+		.real #three { background-image: url("images/cover4.jpg"); background-size: cover;}
+		.real #four { background-image: url("images/cover5.jpg"); background-size: cover;}
 
 		.real .zap{
 			top: 0;
