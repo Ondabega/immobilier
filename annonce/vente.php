@@ -15,8 +15,8 @@ if (isset($_GET["recherche2"])){
     $recherche2 = $_GET["recherche2"];
 }
 
-if (isset($_GET["prix"])){
-    $recherche3 = $_GET["prix"];
+if (isset($_GET["recherche3"])){
+    $recherche3 = $_GET["recherche3"];
 }
 
 if(isset($_GET['nb'])){
@@ -96,7 +96,7 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: rgba(3, 3, 3, 0.39); position: sticky;">
+      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
@@ -113,6 +113,9 @@ if(isset($_GET['nb'])){
   				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
         </div>
+        <div class="logow">
+          <a href="../index.php" class="logo" > Audrey Brezout </a>
+        </div>
       </nav>
 
 
@@ -123,7 +126,13 @@ if(isset($_GET['nb'])){
           <label>Recherche</label>
 
           <select class="form-control" name="recherche" >
-            <option value="">Selectionnez une ville </option>
+            <option value=""><?php if($recherche>0){
+            $Q = $bdd->prepare('SELECT * FROM ville WHERE id= :i ') ;
+
+            $Q->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+            $Q->execute();
+            $don= $Q->fetch();
+            echo $don['nom'];}else{echo "Selectionnez une ville";} ?> </option>
 
             <?php
             $profil = $bdd -> query('SELECT * FROM ville');
@@ -140,8 +149,8 @@ if(isset($_GET['nb'])){
           </select>
 
           <div class="form-group">
-        	<label>Prix</label>
-        	<input class="form-control" name="recherche3" type="int">
+        	<label>Prix Max</label>
+        	<input class="form-control" placeholder=<?php if($recherche3>0){echo $recherche3;}else{echo "prix";} ?> name="recherche3" type="int">
         	</div>
 
         </div>
@@ -179,11 +188,20 @@ if(isset($_GET['nb'])){
           }
 
         }else{
+          if($recherche3>0){
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.prix= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+          $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+          $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
+          $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+          $Query->execute();
+        }else{
           $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
           $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
           $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
           $Query->execute();
+        }
 
         }
       }else{
@@ -196,7 +214,7 @@ if(isset($_GET['nb'])){
             $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
             $Query->execute();
           }else{
-            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE AND vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
             $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
             $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
@@ -262,5 +280,4 @@ if(isset($_GET['nb'])){
       <?php
       }
 
-
-       ?>
+   ?>
