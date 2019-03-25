@@ -36,7 +36,7 @@ include_once "../needed.php";
     }
 
     .smenu .slist:hover {
-    	background-color: orange;
+    	background-color: #3C7AB3;
     	opacity: .8;
     }
 
@@ -143,14 +143,14 @@ include_once "../needed.php";
 <body>
 	<section class="navbar">
 		<header>
-      <nav class="nav" id="nav" style="background-color:RGBA(88,168,158,0.5); position: relative;">
+      <nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.39); position: relative;">
   			<div class="element">
   				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
   				<il class="selt" id="smenul">Annonces
   					<ul class="smenu">
-  						<il style="display: inherit; margin-top: .80em;"><a class="slist" href="vente.php" style="color:black;">Ventes</a></il>
-  						<il style="display: inherit;"><a class="slist" href="location.php" style="color:black;">Locations</a></il>
-  						<il style="display: inherit;"><a class="slist" href="locationp.php" style="color:black;">Loca</a></il>
+  						<il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
+  						<il style="display: inherit;"><a class="slist" style="color:white;" href="location.php" style="color:black;">Locations</a></il>
+  						<il style="display: inherit;"><a class="slist" style="color:white;" href="locationp.php" style="color:black;">Loca</a></il>
   					</ul>
   				</il>
   				<a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
@@ -158,9 +158,7 @@ include_once "../needed.php";
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
   			<?php if(!empty($_SESSION['admin'])){ echo "<a href='annonce/ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
   			</div>
-  			<div class="logow">
-  				<a href="../#index" class="logo" > Audrey Brezout </a>
-		</header>
+  		</header>
 	</section>
 
 <?php
@@ -284,12 +282,12 @@ include_once "../needed.php";
         $daa = $query->fetch();
         echo $daa['nom'] ?></p>
 				<p>Type: <?php  if($Data['type_bien']==0){echo " Maison";}else{echo "Appartement";} ?></p>
-				<div class="carte" style="background-color: grey; height: 90px; width: 40em; margin: 1.5em 0 0 0;">ici la map</div>
+				<div class="carte" style="background-color: grey; height: 90px; width: 60%; margin: 1.5em 0 0 0;">ici la map</div>
 			</div>
-			<div style="text-align: center; margin-bottom: 5em;"><a href="../contact-form.php"><button class="selt">Nous contacter</button></a></div>
+			<div style="text-align: center; margin-bottom: 5em;"><a href="../contact-form.php"><button style="color:black; border:0.1px solid black" class="selt">Nous contacter</button></a></div>
 			<style type="text/css">
 				.discribe {
-					margin: 2em 15em 2em 15em;
+					margin: 5% 15% 5% 15%;
 				}
 			</style>
 
@@ -298,6 +296,90 @@ include_once "../needed.php";
 
 
 <?php }?>
+
+
+<!-- debut slider test -->
+<section class="real">
+		<!-- eh merci le slider claqué***********************  -->
+		<div class="container">
+			<div class="zap" id="prev"></div>
+			<div class="zap" id="nxt"></div>
+			<div class="slide-img" id="one">
+				<div class="inbanner">
+					<a href="javascript:void(0);" onclick="toggle_visibility('popup')">1</a>
+				</div>
+			</div>
+			<div class="slide-img" id="two">
+				<div class="inbanner">
+					<a href="javascript:void(0)" onclick="toggle_visibility('popup1')">2</a>
+				</div>
+			</div>
+			<div class="slide-img" id="three">
+				<div class="inbanner">
+					<a href="javascript:void(0)" onclick="toggle_visibility('popup2')">3</a>
+				</div>
+			</div>
+			<div class="slide-img" id="four">
+				<div class="inbanner">
+					<a href="javascript:void(3)" onclick="toggle_visibility('popup3')">4</a>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			let sliderImages = document.querySelectorAll('.slide-img'),zapNext = document.querySelector('#nxt'), zapPrev = document.querySelector('#prev'), current = 0;
+
+			// nettoie les images
+			function reset(){
+				for (let i = 0; i < sliderImages.length; i++) {
+					sliderImages[i].style.display = 'none'
+				}
+			}
+
+			// Debut du slide
+			function startSlide(){
+				reset();
+				sliderImages[0].style.display = 'block'
+			}
+
+			// image precedente
+			function slideLeft(){
+				reset();
+				sliderImages[current - 1].style.display = 'block';
+				current--;
+			}
+
+			// image suivante
+			function slideRight(){
+				reset();
+				sliderImages[current + 1].style.display = 'block';
+				current++;
+			}
+
+			// zap precedent
+			zapPrev.addEventListener('click', function(){
+				if (current === 0) {
+					current = sliderImages.length;
+				}
+				slideLeft();
+			})
+
+			// zap suivant
+			zapNext.addEventListener('click', function(){
+				if (current === sliderImages.length - 1) {
+					current = -1;
+				}
+				slideRight();
+			})
+
+			startSlide();
+		</script>
+
+	</section>
+
+
+<!-- fin de slider test -->
+
 
   <footer class="footer" style="margin-bottom: 0px;">
   			<div class="row">
@@ -318,7 +400,7 @@ include_once "../needed.php";
 
   				<div class="footer-bottom">
   					<div class="copyright-text">
-  						<p>CopyRight © 2018 Name</p>
+  						<p>CopyRight © 2019 Name</p>
   					</div> <!-- End Col -->
   				</div>
   </footer>

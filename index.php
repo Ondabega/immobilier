@@ -6,6 +6,10 @@ include_once "needed.php";
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/x-svg" href="icons/logo-bleu.svg">
+	<meta name="author" content="Domi and Thomas">
+	<meta name="description" content="Entreprise, Agence immobilière">
+	<meta name="keywords" content="istres, immobilier, martigues, Audrey Brezout, Entreprise, immo, BoutikImo,">
 	<link rel="stylesheet" type="text/css" href="style1.css">
 	<title>index</title>
 </head>
@@ -54,7 +58,7 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/cover.jpg) no-repeat center center; background-size: cover;">
+	<div class="header" style="background: url(images/img1.jpg) no-repeat center center; background-size: cover;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -76,10 +80,6 @@ include_once "needed.php";
 				</il> " ;} ?>
 				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
 			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-			</div>
-			<div class="logow">
-				<a href="#index" class="logo" > Audrey Brezout </a>
-
 			</div>
 		</nav>
 		<div>
@@ -181,7 +181,7 @@ include_once "needed.php";
 
 				<div class="footer-bottom">
 					<div class="copyright-text">
-						<p>CopyRight © 2018 Name</p>
+						<p>CopyRight © 2019 Name</p>
 					</div> <!-- End Col -->
 				</div>
 </footer>

@@ -31,7 +31,7 @@ include_once "../needed.php";
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
+      <nav class="nav" id="nav" style="height= 3em; background: rgba(3, 3, 3, 0.39); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<a href="vente.php" class="selt" onclick="myFunction()">Ventes</a>
@@ -40,9 +40,6 @@ include_once "../needed.php";
             <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
           else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
           <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
-        </div>
-        <div class="logow">
-          <a href="../index.php" class="logo" > Audrey Brezout </a>
         </div>
       </nav>
 

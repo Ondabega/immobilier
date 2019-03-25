@@ -1,20 +1,10 @@
-
-
 @media screen and (max-device-width: 600px) {
 			body, html {
-				font-size: 1em;
+				font-size: 115%;
 			}
-      .logow {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .logow {
-        display: none;
-      }
+			.real .container{
+				}
 		}
-
 
 
 /************************************/
@@ -23,6 +13,7 @@
   padding: 0;
   margin: 0;
   font-family: Verdana;
+	font-size: 100%;
 }
 
 a {
@@ -48,7 +39,7 @@ a {
 }
 
 .logo {
-  display: inline-table;
+ display: inline-table;
  font-family: "Polarise",arial, sans-serif;
  font-size:25px ;
  text-align:center;
@@ -81,8 +72,8 @@ a {
 .element {
   margin: 1%;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 .element .selt {
@@ -101,6 +92,7 @@ a {
   border: 0Px solid;
 }
 
+
 .selt:hover {
   background-color: #3C7AB3;
   color:white;
@@ -111,6 +103,10 @@ a {
   background-color: #3C7AB3;
   color:white;
   transition: .5s;
+}
+
+.smenu .slist {
+	color:white;
 }
 
 .form-inline {
@@ -138,8 +134,8 @@ a {
 }
 
 .logow {
-  float: left;
-  width: 5em;
+  display: flex;
+	justify-content: center;
   margin: 1%;
 }
 
@@ -197,8 +193,8 @@ a {
     .icon {
 			display: inline-block;
 			margin: 4%;
-			height: 20px;
-			width: 20px;
+			height: 5%;
+			width: 5%;
 		}
 
 		.copyright-text {
@@ -323,3 +319,63 @@ a {
       stroke-width: 9;
       animation: outika .2s linear forwards 5.4s;
     }
+
+		/*****************new slider*************/
+		.real {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 150px;
+		padding-top: 60px;
+	}
+
+	.real h2 {
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	.real .container{
+			display: block;
+			width: 75%;
+			height: 37em;
+			margin: auto;
+			padding: 0;
+			overflow-y: hidden;
+			background-size: cover;
+			margin-top: 3%;
+		}
+
+		.real .slide-img{
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.real .inbanner {
+			display: block;
+			padding-top: 7em;
+			}
+
+		.inbanner h3{
+			color: white;
+			margin-bottom: 5%;
+			font-size: 3em;
+			text-shadow:3px 3px 5px black;
+		}
+
+		.real #one { background-image: url("images/cover3.jpg"); background-size: cover;}
+		.real #two { background-image: url("images/cover2.jpg"); background-size: cover;}
+		.real #three { background-image: url("images/cover4.jpg"); background-size: cover;}
+		.real #four { background-image: url("images/cover5.jpg"); background-size: cover;}
+
+		.real .zap{
+			top: 0;
+			width: 10%;
+			height: 100%;
+			cursor: pointer;
+			background: rgba(88,88,88,.2);
+		}
+
+		.real #prev { left: 0; float: left;}
+		.real #nxt { right: 0; float: right;}

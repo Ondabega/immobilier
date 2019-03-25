@@ -32,7 +32,7 @@ include_once "needed.php";
 	}
 
 	.smenu .slist:hover {
-		background-color: orange;
+		background-color: #3C7AB3;
 		opacity: .8;
 	}
 
@@ -40,6 +40,7 @@ include_once "needed.php";
 		text-align: center;
 		padding: 0.75em 0 0 0;
 		transition: 0.1s;
+		color:white;
 	}
 
 	#smenul {
@@ -54,28 +55,24 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" style="background: url(images/cover2.jpg) no-repeat center center; background-size: cover; height: 35em;">
+	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 20%;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<il class="selt" id="smenul">Annonces
 					<ul class="smenu">
-						<il style="display: inherit; margin-top: .80em;"><a class="slist" href="annonce/vente.php" style="color:black;">Ventes</a></il>
-						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:black;">Locations</a></il>
-						<il style="display: inherit;"><a class="slist" href="annonce/locationp.php" style="color:black;">Loca</a></il>
+						<il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="annonce/vente.php" style="color:black;">Ventes</a></il>
+						<il style="display: inherit;"><a class="slist" style="color:white;" href="annonce/location.php" style="color:black;">Locations</a></il>
+						<il style="display: inherit;"><a class="slist" style="color:white;" href="annonce/locationp.php" style="color:black;">Loca</a></il>
 					</ul>
 				</il>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
       <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
-			<div class="logow">
-				<a href="index.php" class="logo" > Audrey Brezout </a>
-
-			</div>
 		</nav>
 		<div>
-			<h1 class="accueil">Contact  Us</h1>
+			<h1 class="accueil" style="color:white;">Contact  Us</h1>
 		</div>
 	</div>
 
@@ -95,12 +92,14 @@ include_once "needed.php";
 
 <section class="contact" id="contact">
 		<div class="container">
-			<h2 id="contact-me">Retrouvez nous</h2>
-			<hr class="separator" style="margin-left: 47%;">
+
 				<div class="row">
 		        	<div class="margfoot">
 		        		<fieldset>
-		            		<legend>Contactez nous</legend>
+		            		<legend></legend>
+										<div class="logow">
+											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
+										</div>
 										<div class="phrase">
 											<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
@@ -110,7 +109,7 @@ include_once "needed.php";
 
 		    		<div class="margfoot" id="philo">
 		          		<fieldset>
-		          		<legend>Locaux</legend>
+		          		<legend></legend>
 		          			<div class="rez">
 		          			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.6715017648485!2d4.98628331549307!3d43.5091879791265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b61c97dd715a13%3A0x179b0df5b20d2a5f!2sAvenue+du+Palio%2C+13800+Istres!5e0!3m2!1sfr!2sfr!4v1546703427107" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 										</div> <!-- End Col -->
@@ -141,7 +140,7 @@ include_once "needed.php";
 
 				<div class="footer-bottom">
 					<div class="copyright-text">
-						<p>CopyRight © 2018 Name</p>
+						<p>CopyRight © 2019 Name</p>
 					</div> <!-- End Col -->
 				</div>
 </footer>

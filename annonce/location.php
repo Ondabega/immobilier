@@ -85,10 +85,10 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
+      <nav class="nav" id="nav" style="height= 3em; background: rgba(3, 3, 3, 0.39); position: sticky;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-        <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
+        <a href="vente.php" class="selt" onclick="myFunction()">Ventes</a>
         <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
           <?php if(!empty($_SESSION['admin'])){ echo "
@@ -101,9 +101,6 @@ if(isset($_GET['nb'])){
   				</il> " ;} ?>
   				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-        </div>
-        <div class="logow">
-          <a href="../index.php" class="logo" > Audrey Brezout </a>
         </div>
       </nav>
 

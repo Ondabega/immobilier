@@ -7,7 +7,7 @@ include_once "../needed.php";
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../style1.css">
-	<title>Untitled</title>
+	<title>Add</title>
 </head>
 <body>
 
@@ -18,11 +18,7 @@ include_once "../needed.php";
 			<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-			</div>
-			<div class="logow">
-				<a href="../index.php" class="logo" > Audrey Brezout </a>
-
-			</div>
+		</div>
 		</nav>
 	</div>
 
