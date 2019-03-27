@@ -73,8 +73,8 @@ include_once "needed.php";
 				<?php if(!empty($_SESSION['admin'])){ echo "
 					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
 					<ul class='smenu'>
-						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='annonce/ajout.php' style='color:black;'>Biens</a></il>
-						<il style='display: inherit;'><a class='slist' href='annonce/ajout_villes.php' style='color:black;'>Villes</a></il>
+						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='annonce/ajout.php' style='color:white;'>Biens</a></il>
+						<il style='display: inherit;'><a class='slist' href='annonce/ajout_villes.php' style='color:white;'>Villes</a></il>
 
 					</ul>
 				</il> " ;} ?>
