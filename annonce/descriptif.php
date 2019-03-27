@@ -143,7 +143,7 @@ include_once "../needed.php";
 <body>
 	<section class="navbar">
 		<header>
-      <nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.39); position: relative;">
+      <nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.6); position: relative;">
   			<div class="element">
   				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
   				<il class="selt" id="smenul">Annonces

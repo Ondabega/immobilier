@@ -44,8 +44,8 @@ if(isset($_GET['nb'])){
             margin: 2%;
             display: flex;
             flex-direction: row;
-            border: 1px solid black;
-            border-radius: 2em;
+            border: 1px solid grey;
+            box-shadow: 10px 5px 5px grey;
         }
 
         .tcontain {
@@ -96,7 +96,7 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: RGBA(88,168,158,0.5); position: sticky;">
+      <nav class="nav" style="height= 3em; background: rgba(3, 3, 3, 0.6);">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <a href="location.php" class="selt" onclick="myFunction()">Locations</a>
@@ -112,9 +112,6 @@ if(isset($_GET['nb'])){
   				</il> " ;} ?>
   				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-        </div>
-        <div class="logow">
-          <a href="../index.php" class="logo" > Audrey Brezout </a>
         </div>
       </nav>
 
@@ -281,3 +278,4 @@ if(isset($_GET['nb'])){
       }
 
    ?>
+   <?php include("../footer.php") ?>

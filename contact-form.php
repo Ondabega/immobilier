@@ -55,7 +55,7 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 20%;">
+	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 30%;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -71,6 +71,9 @@ include_once "needed.php";
       <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 		</nav>
+		<div>
+			<h1 class="accueil" style="color:white;"></h1>
+		</div>
 	</div>
 
 	<!-- add javascript for navbar onscroll -->

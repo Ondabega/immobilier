@@ -2,10 +2,21 @@
 include_once "../needed.php";
 
 $recherche = -1;
+$recherche2 = -1;
+$recherche3 = -1;
 $debut=0;
 
 if (isset($_GET["recherche"])){
     $recherche = $_GET["recherche"];
+}
+
+
+if (isset($_GET["recherche2"])){
+    $recherche2 = $_GET["recherche2"];
+}
+
+if (isset($_GET["recherche3"])){
+    $recherche3 = $_GET["recherche3"];
 }
 
 if(isset($_GET['nb'])){
@@ -33,8 +44,8 @@ if(isset($_GET['nb'])){
             margin: 2%;
             display: flex;
             flex-direction: row;
-            border: 1px solid black;
-            border-radius: 2em;
+            border: 1px solid grey;
+            box-shadow: 10px 5px 5px grey;
         }
 
         .tcontain {
@@ -85,10 +96,10 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" id="nav" style="height= 3em; background: rgba(3, 3, 3, 0.39); position: sticky;">
+      <nav class="nav" style="height= 3em; background: rgba(3, 3, 3, 0.6);">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-        <a href="vente.php" class="selt" onclick="myFunction()">Ventes</a>
+        <a href="Ventes.php" class="selt" onclick="myFunction()">Ventes</a>
         <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
           <?php if(!empty($_SESSION['admin'])){ echo "
@@ -106,10 +117,19 @@ if(isset($_GET['nb'])){
 
 
         <form class="form-inline">
+
+
         <div class="form-group">
           <label>Recherche</label>
+
           <select class="form-control" name="recherche" >
-            <option value="">Selectionnez une ville </option>
+            <option value=""><?php if($recherche>0){
+            $Q = $bdd->prepare('SELECT * FROM ville WHERE id= :i ') ;
+
+            $Q->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+            $Q->execute();
+            $don= $Q->fetch();
+            echo $don['nom'];}else{echo "Selectionnez une ville";} ?> </option>
 
             <?php
             $profil = $bdd -> query('SELECT * FROM ville');
@@ -117,36 +137,103 @@ if(isset($_GET['nb'])){
               <option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']; ?></option>
           <?php  } ?>
           </select>
+
+          <select class="form-control" name="recherche2" >
+
+              <option value='0' >Maison</option>
+              <option value='1' >Appartement</option>
+
+          </select>
+
+          <div class="form-group">
+        	<label>Prix Max</label>
+        	<input class="form-control" placeholder=<?php if($recherche3>0){echo $recherche3;}else{echo "prix";} ?> name="recherche3" type="int">
+        	</div>
+
         </div>
+
+
         <button type="submit" class="btn btn-default">Rechercher</button>
 
       </form>
 
 
-
+</br></br></br>
 
 
       <div class="conteneur_alerte">
       <?php
 
       if($recherche>0){
-      $Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=1 LIMIT 7  OFFSET :nb') ;
+        if($recherche2>=0){
+          if($recherche3>0){
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND vente.prix<= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
-      $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
-      $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
-      $Query->execute();}
+            $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+            $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
+            $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
+            $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+            $Query->execute();
+          }else{
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
 
+            $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+            $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
+            $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+            $Query->execute();
 
-      else{$Query = $bdd->prepare('SELECT * FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=1  LIMIT 7 OFFSET :nb ') ;
-        $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
-        $Query->execute();
+          }
+
+        }else{
+          if($recherche3>0){
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.prix= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+          $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+          $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
+          $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+          $Query->execute();
+        }else{
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+          $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
+          $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+          $Query->execute();
+        }
+
+        }
+      }else{
+        if($recherche2>=0){
+          if($recherche3>0){
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND vente.prix<= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+            $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
+            $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
+            $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+            $Query->execute();
+          }else{
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+            $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
+            $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+            $Query->execute();
+
+          }
+
+        }else{
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0 LIMIT 7  OFFSET :nb') ;
+
+          $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
+          $Query->execute();
+
+        }
+
       }
 
 
       while ($Data = $Query->fetch()) {
        ?>
 
-          <a href="descriptif.php?vente= <?php echo $Data['id'] ; ?>" >
+          <a href="descriptif.php?vente= <?php echo $Data['venteid'] ; ?>" >
             <div class="tbanner">
                 <div class="tcontain" style="height: 20em; width: 40%;">
                     <img src=<?php echo $Data['chemin'] ?> style="height: 100%  ; width: 100%;" >
@@ -171,24 +258,24 @@ if(isset($_GET['nb'])){
       <?php
       if($debut > 6){
         ?>
-        <a href="vente.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut-7;?>" class="btn btn-default">Elements précédents</a>
+        <a href="location.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut-7;?>" class="btn btn-default">Elements précédents</a>
       <?php
       }
 
       if($recherche>0){$test = $bdd->prepare('SELECT * FROM vente
-          WHERE vente.ville= :i AND type_vente=1 LIMIT 7 OFFSET :nb');
+          WHERE vente.ville= :i AND type_vente=0 LIMIT 7 OFFSET :nb');
       $test->bindValue(':i',$recherche, PDO::PARAM_INT);
       $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
       $test->execute();
-    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=1 LIMIT 7 OFFSET :nb');
+    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=0 LIMIT 7 OFFSET :nb');
         $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
         $test->execute();
        }
 
       if($test -> fetch()){ ?>
-        <a href="vente.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut+7;?>" class="btn btn-default">Elements suivants</a>
+        <a href="location.php?recherche=<?php echo $recherche;?>&amp;nb=<?php echo $debut+7;?>" class="btn btn-default">Elements suivants</a>
       <?php
       }
 
-
-       ?>
+   ?>
+   <?php include("../footer.php") ?>

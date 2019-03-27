@@ -70,7 +70,7 @@ include_once "../needed.php";
 					</div>
 	</footer>
 
-
+<?php include("../footer.php") ?>
 
 
 
