@@ -71,9 +71,6 @@ include_once "needed.php";
       <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 		</nav>
-		<div>
-			<h1 class="accueil" style="color:white;">Contact  Us</h1>
-		</div>
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
