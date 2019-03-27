@@ -154,6 +154,14 @@ include_once "../needed.php";
   					</ul>
   				</il>
   				<a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
+					<?php if(!empty($_SESSION['admin'])){ echo "
+  					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
+  					<ul class='smenu'>
+  						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='ajout.php' style='color:white;'>Biens</a></il>
+  						<il style='display: inherit;'><a class='slist' href='ajout_villes.php' style='color:white;'>Villes</a></il>
+
+  					</ul>
+  				</il> " ;} ?>
   				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
   			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
   			</div>
