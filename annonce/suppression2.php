@@ -11,7 +11,6 @@ $nb=0; ?>
 	<title>Supp</title>
 </head>
 <body>
-
 	<!-- navigation -->
 	<div class="header" style="background: url(../images/cover7.jpg) no-repeat center center; background-size: cover; height: 500px">
 		<nav class="nav" id="nav">
