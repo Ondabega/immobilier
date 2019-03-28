@@ -66,9 +66,16 @@ include_once "needed.php";
 						<il style="display: inherit;"><a class="slist" style="color:white;" href="annonce/locationp.php" style="color:black;">Loca</a></il>
 					</ul>
 				</il>
+				<?php if(!empty($_SESSION['admin'])){ echo "
+					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
+					<ul class='smenu'>
+						<il style='display: inherit; margin-top: .80em;'><a class='slist' href='annonce/ajout.php' style='color:white;'>Biens</a></il>
+						<il style='display: inherit;'><a class='slist' href='annonce/ajout_villes.php' style='color:white;'>Villes</a></il>
+
+					</ul>
+				</il> " ;} ?>
         <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
       else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
-      <?php if(!empty($_SESSION['admin'])){ echo "<a href='ajout.php' class='selt' id='connect' onclick='myFunction()'>Espace admin</a>" ;} ?>
 			</div>
 		</nav>
 		<div>
