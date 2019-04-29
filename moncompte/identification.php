@@ -53,7 +53,7 @@
 	<title>Untitled</title>
 </head>
 
-<body style="background: url(../images/connect.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
+<body style="background: url(../images/img3.jpg) no-repeat center center; background-size: cover; height: 610px;  background-attachment: fixed;">
 
   <style>
   * {
@@ -113,13 +113,13 @@
     else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
     </div>
   </nav>
-  <div style="margin-top: 18em; ">
+  <div style="margin-top: 19em; ">
     <div class="row">
         <div class="col-md-4"></div>
       <div class="col-md-4">
     <h3>Identifiez-vous</h3>
 
-        <form action=<?php echo $direction?> method="post" style="padding-top:20px; width : 50%; margin-left: 25%; " >
+        <form action=<?php echo $direction?> method="post" style="padding-top:0px; width : 50%; margin-left: 25%; " >
             <?php
               if(!empty($errorMessage))
               {
@@ -157,4 +157,3 @@
     }
   }
 </script>
-<?php include("../footer.php") ?>
