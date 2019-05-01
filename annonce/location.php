@@ -263,11 +263,11 @@ if(isset($_GET['nb'])){
       }
 
       if($recherche>0){$test = $bdd->prepare('SELECT * FROM vente
-          WHERE vente.ville= :i AND type_vente=0 LIMIT 7 OFFSET :nb');
+          WHERE vente.ville= :i AND type_vente=1 LIMIT 7 OFFSET :nb');
       $test->bindValue(':i',$recherche, PDO::PARAM_INT);
       $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
       $test->execute();
-    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=0 LIMIT 7 OFFSET :nb');
+    }else{$test = $bdd->prepare('SELECT * FROM vente WHERE type_vente=1 LIMIT 7 OFFSET :nb');
         $test->bindValue(':nb',((int) $debut)+7,PDO::PARAM_INT);
         $test->execute();
        }
