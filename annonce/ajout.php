@@ -103,7 +103,7 @@ else
   ?>
   <div class="boutons_nav" style="display: flex; justify-content: center;">
     <a href="ajout.php" class="bouton_menu bouton_nav_selected" style="margin-right:20%">Ajout de bien</a>
-    <a href="suppression.php" class="bouton_menu">Modification/Suppression</a>
+    <a href="suppression2.php" class="bouton_menu">Suppression</a>
   </div>
 
 <div class="row">
