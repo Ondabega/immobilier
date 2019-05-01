@@ -128,29 +128,19 @@ include_once "needed.php";
 	<!-- fin de contact********************* -->
 
 	<!-- pied de page -->
-<footer class="footer">
-			<div class="row">
-									<a class="case" rel="follow" href="https://twitter.com/">
-										<img class="icon" alt="Twitter" title="Twitter" src="twitter-icon.svg"></a></td>
+	<footer class="footer" style="margin-bottom: 0px;">
+				<div class="row">
+	            			<h4>boutikimo@gmail.com</h4>
+	          	</div>
 
-									<a class="case" rel="follow" href="https://www.linkedin.com/">
-										<img class="icon" alt="LinkedIn" title="LinkedIn" src="linkedin-icon.svg"></a>
+					<hr class="separator" style="margin-left: 47%;">
 
-									<a class="case" rel="follow" href="https://www.instagram.com/">
-									<img class="icon" alt="Instagram" title="Instagram" src="instagram-icon.svg"></a>
-
-									<a class="case" rel="follow" href="https://www.facebook.com/">
-									<img class="icon" alt="Facebook" title="Facebook" src="facebook-icon.svg"></a>
-						</div>
-
-				<hr class="separator" style="margin-left: 47%;">
-
-				<div class="footer-bottom">
-					<div class="copyright-text">
-						<p>CopyRight © 2019 Name</p>
-					</div> <!-- End Col -->
-				</div>
-</footer>
+					<div class="footer-bottom">
+						<div class="copyright-text">
+							<p>CopyRight © 2019 Name</p>
+						</div> <!-- End Col -->
+					</div>
+	</footer>
 
 </body>
 </html>
