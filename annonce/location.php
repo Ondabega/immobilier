@@ -167,7 +167,7 @@ if(isset($_GET['nb'])){
       if($recherche>0){
         if($recherche2>=0){
           if($recherche3>0){
-            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND vente.prix<= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND vente.prix<= :p AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
             $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
             $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
@@ -175,7 +175,7 @@ if(isset($_GET['nb'])){
             $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
             $Query->execute();
           }else{
-            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.type_bien= :v AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
             $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
             $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
@@ -186,14 +186,14 @@ if(isset($_GET['nb'])){
 
         }else{
           if($recherche3>0){
-          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.prix= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND vente.prix= :p AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
           $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
           $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
           $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
           $Query->execute();
         }else{
-          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.ville= :i AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
           $Query->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
           $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
@@ -204,14 +204,14 @@ if(isset($_GET['nb'])){
       }else{
         if($recherche2>=0){
           if($recherche3>0){
-            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND vente.prix<= :p AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND vente.prix<= :p AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
             $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
             $Query->bindValue(':p',(int) $recherche3,PDO::PARAM_INT);
             $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
             $Query->execute();
           }else{
-            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND type_vente=0 LIMIT 7  OFFSET :nb') ;
+            $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE vente.type_bien= :v AND type_vente=1 LIMIT 7  OFFSET :nb') ;
 
             $Query->bindValue(':v',(int) $recherche2,PDO::PARAM_INT);
             $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
@@ -220,7 +220,7 @@ if(isset($_GET['nb'])){
           }
 
         }else{
-          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0 LIMIT 7  OFFSET :nb') ;
+          $Query = $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=1 LIMIT 7  OFFSET :nb') ;
 
           $Query->bindValue(':nb',(int) $debut,PDO::PARAM_INT);
           $Query->execute();
