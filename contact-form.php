@@ -113,14 +113,6 @@ include_once "needed.php";
 								</fieldset>
 							</div>
 
-		    		<div class="margfoot" id="philo">
-		          		<fieldset>
-		          		<legend></legend>
-		          			<div class="rez">
-		          			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.6715017648485!2d4.98628331549307!3d43.5091879791265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b61c97dd715a13%3A0x179b0df5b20d2a5f!2sAvenue+du+Palio%2C+13800+Istres!5e0!3m2!1sfr!2sfr!4v1546703427107" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</div> <!-- End Col -->
-		          		</fieldset>
-		        	</div>
 		    	</div>
 			</div>
 	</section>
