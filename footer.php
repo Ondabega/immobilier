@@ -18,18 +18,18 @@
 	<title>index</title>
 </head>
 <body>
-<footer class="footer" style="margin-bottom: 0px;">
-      <div class="row">
-              <h2>boutikimo@gmail.com</h2>
-            </div>
+  <footer class="footer" style="margin-bottom: 0px;">
+  			<div class="row">
+              			<h4>boutikimo@gmail.com</h4>
+            	</div>
 
-        <hr class="separator" style="margin-left: 47%;">
+  				<hr class="separator" style="margin-left: 47%;">
 
-        <div class="footer-bottom">
-          <div class="copyright-text">
-            <p>CopyRight © 2019 Name</p>
-          </div> <!-- End Col -->
-        </div>
-</footer>
+  				<div class="footer-bottom">
+  					<div class="copyright-text">
+  						<p>CopyRight © 2019 Name</p>
+  					</div> <!-- End Col -->
+  				</div>
+  </footer>
 </body>
 </html>
