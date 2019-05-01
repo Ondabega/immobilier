@@ -99,7 +99,7 @@ if(isset($_GET['nb'])){
       <nav class="nav" style="height= 3em; background: rgba(3, 3, 3, 0.6);">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
-        <a href="Ventes.php" class="selt" onclick="myFunction()">Ventes</a>
+        <a href="ventes.php" class="selt" onclick="myFunction()">Ventes</a>
         <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
           <?php if(!empty($_SESSION['admin'])){ echo "

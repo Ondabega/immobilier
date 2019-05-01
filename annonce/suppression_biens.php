@@ -33,23 +33,22 @@ else
     	<label>Ville</label>
     	<select name="ville" class="form-control">
         <?php $query = $bdd -> query('SELECT * FROM ville ');
-        while($query = $ville -> fetch()){}
+        while($query = $ville -> fetch()){
         ?>
-    		<option value=<?php echo $ville['id']; ?> selected="selected"><?php echo $ville['nom']; </option>
-      }
+    		<option value=<?php echo $ville['id']; ?> selected="selected"><?php echo $ville['nom']; ?></option>
+      <?php }}
       ?>
     </select>
     </div>
     <div class="form-group">
-      <label>Transversalisation :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="transversalisation">
-        <input name="vrai1" type="checkbox" value="1"> Oui</label>
+      <label>Description:     </label><label style="margin-left:20px">
+
+        <input name="description" type="text" class="form-control"> <?php echo $ville</label>
 
     </div>
     <div class="form-group">
       <label>Retenue :     </label><label style="margin-left:20px">
-        <input type="hidden" value="0" name="retenue">
-        <input name="vrai1" type="checkbox" value="1"> Oui</label>
+        <input name="" type="checkbox" value="1"> Oui</label>
 
     </div>
     <div class="form-group">
