@@ -108,8 +108,7 @@ include_once "needed.php";
 											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
 										</div>
 										<div class="phrase">
-											<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry of Lorem Ipsum.</p>
+											<p> Aprés plus de 12ans d"éxpérience dans le dommaine de l'imobilier dans, je m'engage à fournir les meilleurs conseils.</p>
 									  </div>
 								</fieldset>
 							</div>
