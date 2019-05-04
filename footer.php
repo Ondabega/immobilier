@@ -3,7 +3,7 @@
 <style>
 .footer {
   margin-top: 10%;
-  background-color: darkgrey;
+  background-color: black;
 }
 </style>
 <!DOCTYPE html>

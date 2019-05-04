@@ -65,7 +65,7 @@ a {
 }
 
 .navbar {
-  background: RGBA(171,183,179,1);
+  background: black;
   transition: 1s;
 }
 
@@ -182,7 +182,7 @@ a {
 /*pied de page*/
 
     .footer {
-      background-color: darkgrey;
+      background-color: black;
       text-align: center;
       padding-left: 20%;
       padding-right: 20%;

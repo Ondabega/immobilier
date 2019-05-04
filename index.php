@@ -58,7 +58,7 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: 100%;">
+	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: cover;">
 		<div>
 			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 600px; weight: 600px; margin-top: 30px; margin-left: 22%;"/>
 		</div>
