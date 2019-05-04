@@ -1,7 +1,7 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=immobilier;charset=utf8', 'root', '');
-$url ="http://boutikimo.fr/" ;
+$url ="http://immobilier.fr/" ;
 ?>
 
 <!doctype html>
