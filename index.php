@@ -60,7 +60,7 @@ include_once "needed.php";
 	<!-- navigation -->
 	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: 100%;">
 		<div>
-			<img src="images/Logoblanc.png" alt="log boutik imo"/>
+			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 40px; weight: 40px; margin-top: 100px;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">
