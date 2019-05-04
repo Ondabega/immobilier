@@ -58,7 +58,7 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/Logo_boutik_immo.jpg) no-repeat center;">
+	<div class="header" style="background: url(images/Logo_boutik_immo.jpg) no-repeat center; background-size: 100%;">
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
@@ -81,7 +81,7 @@ include_once "needed.php";
 			else{ echo "<a href='../moncompte/identification.php' class='selt' onclick='myFunction()'>Connexion</a>"; }?>
 			</div>
 		</nav>
-	
+
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
