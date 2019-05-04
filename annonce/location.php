@@ -100,7 +100,6 @@ if(isset($_GET['nb'])){
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <a href="vente.php" class="selt" onclick="myFunction()">Ventes</a>
-        <a href="locationp.php" class="selt" onclick="myFunction()">Loca</a>
           <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
           <?php if(!empty($_SESSION['admin'])){ echo "
   					<il class='selt' id='smenul'onclick='myFunction()'>Espace Admin
@@ -110,8 +109,6 @@ if(isset($_GET['nb'])){
 
   					</ul>
   				</il> " ;} ?>
-  				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-  			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
         </div>
       </nav>
 

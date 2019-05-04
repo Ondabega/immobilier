@@ -66,7 +66,6 @@ include_once "needed.php";
 					<ul class="smenu">
 						<il style="display: inherit; margin-top: .80em;"><a class="slist" href="annonce/vente.php" style="color:white;">Ventes</a></il>
 						<il style="display: inherit;"><a class="slist" href="annonce/location.php" style="color:white;">Locations</a></il>
-						<il style="display: inherit;"><a class="slist" href="annonce/locationp.php" style="color:white;">Loca</a></il>
 					</ul>
 				</il>
 				<a href="contact-form.php" class="selt" onclick="myFunction()">Contact</a>
@@ -79,7 +78,7 @@ include_once "needed.php";
 					</ul>
 				</il> " ;} ?>
 				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+			else{ echo "<a href='../moncompte/identification.php' class='selt' onclick='myFunction()'>Connexion</a>"; }?>
 			</div>
 		</nav>
 	</div>

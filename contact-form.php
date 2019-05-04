@@ -74,8 +74,7 @@ include_once "needed.php";
 
 					</ul>
 				</il> " ;} ?>
-        <?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-      else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+
 			</div>
 		</nav>
 		<div>
