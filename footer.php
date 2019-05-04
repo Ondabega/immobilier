@@ -20,7 +20,7 @@
 <body>
   <footer class="footer" style="margin-bottom: 0px;">
   			<div class="row">
-              			<h4>boutikimmo@gmail.com</h4>
+              			<h4>boutikimo@gmail.com</h4>
             	</div>
 
   				<hr class="separator" style="margin-left: 47%;">
