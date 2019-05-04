@@ -58,7 +58,10 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/Logo_boutik_immo.jpg) no-repeat center; background-size: 100%;">
+	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: 100%;">
+		<div>
+			<img src="images/Logoblanc.png" alt="log boutik imo"/>
+		</div>
 		<nav class="nav" id="nav">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
