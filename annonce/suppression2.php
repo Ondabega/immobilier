@@ -151,7 +151,7 @@ if(isset($_GET['nb'])){
 $nb=(int ) $_GET['nb'];
 }
   $qyy= $bdd->prepare('SELECT *,vente.id AS venteid FROM vente JOIN files ON vente.image=files.id JOIN ville ON vente.ville=ville.id  WHERE type_vente=0 LIMIT 7  OFFSET :nb ');
-  $qyy->bindValue(':off', $nb, PDO::PARAM_INT);
+  $qyy->bindValue(':nb', $nb, PDO::PARAM_INT);
   $qyy->execute();
 
   while($Data=$qyy->fetch()){
@@ -182,17 +182,17 @@ $nb=(int ) $_GET['nb'];
 
 
 $test = $bdd->prepare('SELECT * FROM vente LIMIT 7 OFFSET :off ');
-$test->bindValue(':off',(int) ($nb+5),PDO::PARAM_INT );
+$test->bindValue(':off',(int) ($nb+7),PDO::PARAM_INT );
 $test->execute();
 
  ?>
  <?php
-  if($nb > 19){    ?>
-      <a href="suppression2.php?nb=<?php echo ($nb-20);?>" class="btn btn-default">Villes précédentes</a>
+  if($nb > 6){    ?>
+      <a href="suppression2.php?nb=<?php echo ($nb-7);?>" class="btn btn-default">Villes précédentes</a>
     <?php
     }
     if($test -> fetch()){ ?>
-    <a href="suppression2.php?nb=<?php echo $nb+20; ?>" class="btn btn-default">Ville suivantes</a>
+    <a href="suppression2.php?nb=<?php echo $nb+7; ?>" class="btn btn-default">Ville suivantes</a>
   <?php } ?>
 
 

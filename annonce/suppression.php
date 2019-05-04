@@ -172,7 +172,7 @@ $nb=(int ) $_GET['nb'];
 
 
 $test = $bdd->prepare('SELECT * FROM ville LIMIT 20 OFFSET :off ');
-$test->bindValue(':off',(int) ($nb+5),PDO::PARAM_INT );
+$test->bindValue(':off',(int) ($nb+20),PDO::PARAM_INT );
 $test->execute();
 
  ?>
