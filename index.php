@@ -104,7 +104,7 @@ include_once "needed.php";
 	<!-- pied de page -->
 <footer class="footer" style="margin-bottom: 0px;">
 			<div class="row">
-            			<h4>boutikimo@gmail.com</h4>
+            			<h6 style="color:white;">boutikimo@gmail.com</h6>
           	</div>
 
 				<hr class="separator" style="margin-left: 47%;">

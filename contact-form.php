@@ -106,7 +106,7 @@ include_once "needed.php";
 											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
 										</div>
 										<div class="phrase">
-											<p> Aprés plus de 12ans d'éxpérience dans le dommaine de l'imobilier, je vous invite à me contacter par mail pour obtenir des conseils.</p>
+											<p> Aprés plus de 12ans d'éxpérience dans le domaine de l'immobilier, je vous invite à me contacter par mail pour obtenir des conseils.</p>
 									  </div>
 								</fieldset>
 							</div>
