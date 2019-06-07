@@ -82,7 +82,7 @@ include_once "needed.php";
 				</il> " ;} ?>
 				<a href= <?php if(!empty($_SESSION['login'])){ echo "'../moncompte/deconnexion.php' class='selt' onclick='myFunction()' " ;}
 			else{  echo "'../moncompte/identification.php' class='selt' onclick='myFunction()'" ;} ?>>
-			<img src="images/connexion.png" alt="log connect"/>
+			connexion agence
 
 			 </a>
 
