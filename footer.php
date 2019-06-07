@@ -4,6 +4,7 @@
 .footer {
   margin-top: 10%;
   background-color: black;
+  color: grey;
 }
 </style>
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
 
   				<div class="footer-bottom">
   					<div class="copyright-text">
-  						<p>CopyRight © 2019 Name</p>
+  						<p>CopyRight © 2019 Boutik Imo</p>
   					</div> <!-- End Col -->
   				</div>
   </footer>

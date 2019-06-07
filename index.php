@@ -60,7 +60,7 @@ include_once "needed.php";
 	<!-- navigation -->
 	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: cover;">
 		<div>
-			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 600px; weight: 600px; margin-top: 30px; margin-left: auto; margin-right: auto;"/>
+			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 600px; weight: 600px; margin-top: 30px;display: table-cell; vertical-align: middle; margin-left: auto; margin-right: auto;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">
@@ -111,7 +111,7 @@ include_once "needed.php";
 
 				<div class="footer-bottom">
 					<div class="copyright-text">
-						<p>CopyRight © 2019 Name</p>
+						<p>CopyRight © 2019 Boutik Imo</p>
 					</div> <!-- End Col -->
 				</div>
 </footer>
