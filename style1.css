@@ -182,6 +182,7 @@ a {
 /*pied de page*/
 
     .footer {
+			color: grey;
       background-color: black;
       text-align: center;
       padding-left: 20%;
