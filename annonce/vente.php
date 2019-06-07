@@ -144,7 +144,7 @@ if(isset($_GET['nb'])){
 
           <div class="form-group">
         	<label>Prix Max</label>
-        	<input class="form-control" placeholder=<?php if($recherche3>0){echo $recherche3;}else{echo "prix";} ?> name="recherche3" type="int">
+        	<input class="form-control" placeholder=<?php if($recherche3>0){echo $recherche3; echo "€";}else{echo "prix max achat";} ?> name="recherche3" type="int">
         	</div>
 
         </div>
@@ -233,15 +233,18 @@ if(isset($_GET['nb'])){
           <a href="descriptif.php?vente= <?php echo $Data['venteid'] ; ?>" >
             <div class="tbanner">
                 <div class="tcontain" style="height: 20em; width: 40%;">
-                    <img src=<?php echo $Data['chemin'] ?> style="height: 100%  ; width: 100%;" >
+                    <img src=<?php echo $Data['chemin']; ?> style="height: 100%  ; width: 100%;" >
                 </div>
                 <div class="tcontain" style="width: 60%;">
-                    <h3><?php echo $Data['nom'] ?></h3>
+                    <h3><?php echo $Data['titre'] ;?></h3>
 
                     <br>
-                    <p><?php echo $Data['description'] ?>.</p>
+                    <p><?php echo $Data['description'] ;?>.</p>
                     <br>
-                    <p class="prix"><?php echo $Data['prix'] ?></p>
+                    <br>
+                    <p>Ville: <?php echo $Data['nom'] ;?> </p>
+                    <br>
+                    <p class="prix">Prix d'achat: <?php echo $Data['prix']; echo "€" ?></p>
                 </div>
             </div>
       </a>

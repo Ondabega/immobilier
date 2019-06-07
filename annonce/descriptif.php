@@ -138,6 +138,26 @@ include_once "../needed.php";
 			left: -4200px;
 		}
 
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+				.tbanner {
+						margin: 2%;
+						display: flex;
+						flex-direction: row;
+						border: 1px solid grey;
+						box-shadow: 10px 5px 5px grey;
+				}
+
+				.tcontain {
+						display: block;
+						margin: 1%;
+						padding: 1%;
+				}
+
 	</style>
 </head>
 <body>
@@ -278,11 +298,11 @@ include_once "../needed.php";
       </div>
 			<div class="discribe">
         <h2 style="border-bottom-style: none; margin-bottom:auto;"><?php echo $Data['titre']; ?></h2>
-        <p class="cout" style="margin:0.2em 0 2em 0; padding:0;"><?php echo $Data['prix']."$/mois"; ?></p>
-				<h4 style="margin-bottom: .5em;">Description</h4>
+        <p class="cout" style="margin:0.2em 0 2em 0; padding:0;"><?php echo $Data['prix']."€/mois"; ?></p>
+				<h4 style="margin-bottom: .5em;">Description:</h4>
         <p><?php echo $Data['description']; ?>
 				<p style="text-align: left;"><?php echo $Data['prix']; ?></p>
-				<h4 style="margin-bottom: .5em;">Criteres et localisation</h4>
+				<h4 style="margin-bottom: .5em;">Criteres:</h4>
 				<p>Lieu: <?php   $query = $bdd->prepare('SELECT * FROM ville WHERE ville.id= :i') ;
          $query->bindValue(':i',(int) $Data['ville'], PDO::PARAM_INT);
         $query->execute();
@@ -296,6 +316,7 @@ include_once "../needed.php";
 				.discribe {
 					margin: 5% 15% 5% 15%;
 				}
+
 			</style>
 
 		</section>
@@ -303,89 +324,6 @@ include_once "../needed.php";
 
 
 <?php }?>
-
-
-<!-- debut slider test -->
-<section class="real">
-		<!-- eh merci le slider claqué***********************  -->
-		<div class="container">
-			<div class="zap" id="prev"></div>
-			<div class="zap" id="nxt"></div>
-			<div class="slide-img" id="one">
-				<div class="inbanner">
-					<a href="javascript:void(0);" onclick="toggle_visibility('popup')">1</a>
-				</div>
-			</div>
-			<div class="slide-img" id="two">
-				<div class="inbanner">
-					<a href="javascript:void(0)" onclick="toggle_visibility('popup1')">2</a>
-				</div>
-			</div>
-			<div class="slide-img" id="three">
-				<div class="inbanner">
-					<a href="javascript:void(0)" onclick="toggle_visibility('popup2')">3</a>
-				</div>
-			</div>
-			<div class="slide-img" id="four">
-				<div class="inbanner">
-					<a href="javascript:void(3)" onclick="toggle_visibility('popup3')">4</a>
-				</div>
-			</div>
-		</div>
-
-		<script type="text/javascript">
-			let sliderImages = document.querySelectorAll('.slide-img'),zapNext = document.querySelector('#nxt'), zapPrev = document.querySelector('#prev'), current = 0;
-
-			// nettoie les images
-			function reset(){
-				for (let i = 0; i < sliderImages.length; i++) {
-					sliderImages[i].style.display = 'none'
-				}
-			}
-
-			// Debut du slide
-			function startSlide(){
-				reset();
-				sliderImages[0].style.display = 'block'
-			}
-
-			// image precedente
-			function slideLeft(){
-				reset();
-				sliderImages[current - 1].style.display = 'block';
-				current--;
-			}
-
-			// image suivante
-			function slideRight(){
-				reset();
-				sliderImages[current + 1].style.display = 'block';
-				current++;
-			}
-
-			// zap precedent
-			zapPrev.addEventListener('click', function(){
-				if (current === 0) {
-					current = sliderImages.length;
-				}
-				slideLeft();
-			})
-
-			// zap suivant
-			zapNext.addEventListener('click', function(){
-				if (current === sliderImages.length - 1) {
-					current = -1;
-				}
-				slideRight();
-			})
-
-			startSlide();
-		</script>
-
-	</section>
-
-
-<!-- fin de slider test -->
 
 
   <footer class="footer" style="margin-bottom: 0px;">
