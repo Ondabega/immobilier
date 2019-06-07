@@ -80,8 +80,12 @@ include_once "needed.php";
 
 					</ul>
 				</il> " ;} ?>
-				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-			else{ echo "<a href='../moncompte/identification.php' class='selt' onclick='myFunction()'>Connexion</a>"; }?>
+				<a href= <?php if(!empty($_SESSION['login'])){ echo "'../moncompte/deconnexion.php' class='selt' onclick='myFunction()' " ;}
+			else{  echo "'../moncompte/identification.php' class='selt' onclick='myFunction()'" ;} ?>>
+			<img src="images/connexion.png" alt="log connect"/>
+
+			 </a>
+
 			</div>
 		</nav>
 

@@ -108,8 +108,7 @@
         </ul>
       </il>
       <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
-      <?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; }
-    else{ echo "<a href='/moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>" ; } ?>
+      <?php if(!empty($_SESSION['login'])){ echo "<a href='/moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>"; } ?>
     </div>
   </nav>
   <div style="margin-top: 19em; ">
