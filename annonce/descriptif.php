@@ -150,7 +150,6 @@ include_once "../needed.php";
   					<ul class="smenu">
   						<il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
   						<il style="display: inherit;"><a class="slist" style="color:white;" href="location.php" style="color:black;">Locations</a></il>
-  						<il style="display: inherit;"><a class="slist" style="color:white;" href="locationp.php" style="color:black;">Loca</a></il>
   					</ul>
   				</il>
   				<a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
@@ -162,8 +161,7 @@ include_once "../needed.php";
 
   					</ul>
   				</il> " ;} ?>
-  				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-  			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+  				
   			</div>
   		</header>
 	</section>
@@ -390,24 +388,14 @@ include_once "../needed.php";
 
   <footer class="footer" style="margin-bottom: 0px;">
   			<div class="row">
-              			<a class="case" rel="follow" href="https://twitter.com/">
-                			<img class="icon" alt="Twitter" title="Twitter" src="../twitter-icon.svg"></a>
-
-              			<a class="case" rel="follow" href="https://www.linkedin.com/">
-                			<img class="icon" alt="LinkedIn" title="LinkedIn" src="../linkedin-icon.svg"></a>
-
-              			<a class="case" rel="follow" href="https://www.instagram.com/">
-            				<img class="icon" alt="Instagram" title="Instagram" src="../instagram-icon.svg"></a>
-
-            				<a class="case" rel="follow" href="https://www.facebook.com/">
-            				<img class="icon" alt="Facebook" title="Facebook" src="../facebook-icon.svg"></a>
+              			<h4>boutikimo@gmail.com</h4>
             	</div>
 
   				<hr class="separator" style="margin-left: 47%;">
 
   				<div class="footer-bottom">
   					<div class="copyright-text">
-  						<p>CopyRight © 2019 Name</p>
+  						<p>CopyRight © 2019 Boutik Imo</p>
   					</div> <!-- End Col -->
   				</div>
   </footer>

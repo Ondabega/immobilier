@@ -16,6 +16,10 @@ include_once "needed.php";
 <body>
 
 <style>
+* {
+	background-color: ;
+}
+
 .smenu {
 	padding: 0;
 	margin: 0;
