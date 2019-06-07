@@ -16,8 +16,14 @@ include_once "needed.php";
 <body>
 
 <style>
+@media screen and (max-device-width: 600px) {
+		body, html {
+				font-size: 115%;
+		}
+
 * {
-	background-color: ;
+	margin: 0;
+	padding: 0;
 }
 
 .smenu {

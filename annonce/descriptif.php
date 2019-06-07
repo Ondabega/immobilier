@@ -77,7 +77,7 @@ include_once "../needed.php";
 		}
 
 		.slider-image {
-      width: 600px;
+      width: 12%;
       height: 400px;
 			float: left;
 			margin: 0;
@@ -161,7 +161,7 @@ include_once "../needed.php";
 
   					</ul>
   				</il> " ;} ?>
-  				
+  				é
   			</div>
   		</header>
 	</section>
@@ -287,7 +287,6 @@ include_once "../needed.php";
         $daa = $query->fetch();
         echo $daa['nom'] ?></p>
 				<p>Type: <?php  if($Data['type_bien']==0){echo " Maison";}else{echo "Appartement";} ?></p>
-				<div class="carte" style="background-color: grey; height: 90px; width: 60%; margin: 1.5em 0 0 0;">ici la map</div>
 			</div>
 			<div style="text-align: center; margin-bottom: 5em;"><a href="../contact-form.php"><button style="color:black; border:0.1px solid black" class="selt">Nous contacter</button></a></div>
 			<style type="text/css">
@@ -303,33 +302,7 @@ include_once "../needed.php";
 <?php }?>
 
 
-<!-- debut slider test -->
-<section class="real">
-		<!-- eh merci le slider claqué***********************  -->
-		<div class="container">
-			<div class="zap" id="prev"></div>
-			<div class="zap" id="nxt"></div>
-			<div class="slide-img" id="one">
-				<div class="inbanner">
-					<a href="javascript:void(0);" onclick="toggle_visibility('popup')">1</a>
-				</div>
-			</div>
-			<div class="slide-img" id="two">
-				<div class="inbanner">
-					<a href="javascript:void(0)" onclick="toggle_visibility('popup1')">2</a>
-				</div>
-			</div>
-			<div class="slide-img" id="three">
-				<div class="inbanner">
-					<a href="javascript:void(0)" onclick="toggle_visibility('popup2')">3</a>
-				</div>
-			</div>
-			<div class="slide-img" id="four">
-				<div class="inbanner">
-					<a href="javascript:void(3)" onclick="toggle_visibility('popup3')">4</a>
-				</div>
-			</div>
-		</div>
+
 
 		<script type="text/javascript">
 			let sliderImages = document.querySelectorAll('.slide-img'),zapNext = document.querySelector('#nxt'), zapPrev = document.querySelector('#prev'), current = 0;
