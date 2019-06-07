@@ -105,7 +105,6 @@
         <ul class="smenu">
           <il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="../annonce/vente.php" style="color:black;">Ventes</a></il>
           <il style="display: inherit;"><a class="slist" style="color:white;" href="../annonce/location.php" style="color:black;">Locations</a></il>
-          <il style="display: inherit;"><a class="slist" style="color:white;" href="../annonce/locationp.php" style="color:black;">Loca</a></il>
         </ul>
       </il>
       <a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>

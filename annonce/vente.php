@@ -121,7 +121,7 @@ if(isset($_GET['nb'])){
 
           <select class="form-control" name="recherche" >
             <option value=""><?php if($recherche>0){
-            $Q = $bdd->prepare('SELECT * FROM ville WHERE id= :i ') ;
+            $Q = $bdd->prepare('SELECT * FROM ville WHERE id= :i ') or die(print_r($bdd->errorInfo())) ;
 
             $Q->bindValue(':i',(int) $recherche,PDO::PARAM_INT);
             $Q->execute();
@@ -129,7 +129,7 @@ if(isset($_GET['nb'])){
             echo $don['nom'];}else{echo "Selectionnez une ville";} ?> </option>
 
             <?php
-            $profil = $bdd -> query('SELECT * FROM ville');
+            $profil = $bdd -> query('SELECT * FROM ville') or die(print_r($bdd->errorInfo())) ;
             while($personne = $profil -> fetch()){ ?>
               <option value="<?php echo $personne['id']; ?>" ><?php echo $personne['nom']; ?></option>
           <?php  } ?>

@@ -1,7 +1,16 @@
-<?php
+<?php ini_set('display_errors',1);
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=immobilier;charset=utf8', 'root', '');
+
+/*$bdd = new PDO('mysql:host=localhost;dbname=immobilier;charset=utf8', 'root', '');
 $url ="http://immobilier.fr/" ;
+
+*/
+
+
+$bdd = new PDO('mysql:host=boutikimbnboutik.mysql.db; dbname=boutikimbnboutik', 'boutikimbnboutik', 'Boutikimo1');
+
+
+$url ="https://boutikimo.fr/" ;
 ?>
 
 <!doctype html>
