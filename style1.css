@@ -191,6 +191,7 @@ a {
       padding-right: 20%;
       padding-bottom: 10px;
       padding-top: 10px;
+			margin-bottom: 0;
     }
 
     .icon {
@@ -210,7 +211,7 @@ a {
     .contact {
       display: flex;
       justify-content: center;
-
+			padding-bottom: 5em;
     }
 
     .container{

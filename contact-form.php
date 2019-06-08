@@ -91,7 +91,7 @@ include_once "needed.php";
 		        		<fieldset>
 		            		<legend></legend>
 										<div class="logow">
-											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
+											<a href="index.php" class="logo" style="color:black; font-family: Polarise; font-size: 2em;"> Audrey Brezout </a>
 										</div>
 										<div class="phrase">
 											<p> Aprés plus de 12ans d'éxpérience dans le domaine de l'immobilier, je vous invite à me contacter par mail pour obtenir des conseils.</p>
