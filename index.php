@@ -17,8 +17,11 @@ include_once "needed.php";
 
 <style>
 @media screen and (max-device-width: 600px) {
-		body, html {
+			body, html {
 				font-size: 115%;
+			}
+			.real .container{
+				}
 		}
 
 * {
@@ -68,9 +71,9 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: cover;">
-		<div>
-			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 600px; weight: 600px; margin-top: 30px;display: table-cell; vertical-align: middle; margin-left: auto; margin-right: auto;"/>
+	<div class="header">
+		<div class="logo_central">
+			<img src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto; border: 1px solid red;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">

@@ -148,7 +148,7 @@ include_once "../needed.php";
   				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
   				<il class="selt" id="smenul">Annonces
   					<ul class="smenu">
-  						<il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
+  						<il style="display: inherit; margin-top: 0.80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
   						<il style="display: inherit;"><a class="slist" style="color:white;" href="location.php" style="color:black;">Locations</a></il>
   					</ul>
   				</il>
