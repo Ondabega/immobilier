@@ -105,7 +105,7 @@ include_once "needed.php";
 	<!-- fin de contact********************* -->
 
 	<!-- pied de page -->
-	<footer class="footer" style="margin-bottom: 0px;">
+	<footer class="footer" style="margin-bottom: 0;">
 				<div class="row">
 	            			<h4>boutikimo@gmail.com</h4>
 	          	</div>
