@@ -91,18 +91,18 @@ include_once "../needed.php";
 
 		.slider-button {
 			display: inline-block;
-			height: 10px;
-			width: 12px;
+			height: 12px;
+			width: 14px;
 			border-radius: 5px;
-			background-color: red;
+			background-color: #3C7AB3;
 			transition: 1s;
 			margin-left: .3em;
 			margin-right: .3em;
 		}
 
 		.slider-button:hover {
-			width: 17px;
-			background-color: green;
+			width: 20px;
+			background-color: #44DAE8;
 			transition: .6s;
 		}
 

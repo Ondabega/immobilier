@@ -76,7 +76,7 @@ if(isset($_GET['nb'])){
 
         .smenu .slist:hover {
         	background-color: orange;
-        	opacity: .8;
+        	opacity: 0.8;
         }
 
         #smenul:hover {
@@ -96,7 +96,7 @@ if(isset($_GET['nb'])){
     </style>
 
     <!-- navigation -->
-      <nav class="nav" style="height= 3em; background: rgba(3, 3, 3, 0.6);">
+      <nav class="nav" style="height= 3em; background: black;">
         <div class="element">
         <a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
         <a href="location.php" class="selt" onclick="myFunction()">Locations</a>

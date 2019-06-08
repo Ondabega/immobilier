@@ -55,8 +55,8 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 20em;">
-		<nav class="nav" id="nav">
+	<div class="header" id="headcontact" style="background: url(images/connect.jpg) no-repeat center center; background-size: cover; height: 20em;">
+		<nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.6); position: relative;">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<il class="selt" id="smenul">Annonces
@@ -82,18 +82,6 @@ include_once "needed.php";
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
-	<script type="text/javascript">
-		window.onscroll = function() {myFunction()};
-
-		function myFunction() {
-  		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    		document.getElementById("nav").className = "navbar";
-    	}
-  		else {
-    		document.getElementById("nav").className = "";
-  		}
-		}
-	</script>
 
 <section class="contact" id="contact">
 		<div class="container">
