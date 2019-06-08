@@ -73,7 +73,7 @@ include_once "needed.php";
 	<!-- navigation -->
 	<div class="header">
 		<div class="logo_central">
-			<img src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto; border: 1px solid red;"/>
+			<img src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">
