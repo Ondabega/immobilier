@@ -55,7 +55,7 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" id="headcontact" style="background: url(images/connect.jpg) no-repeat center center; background-size: cover; height: 20em;">
+	<div class="header" id="headcontact" style="background: url(images/connect.jpg) no-repeat center center; background-size: cover; height: 22em;">
 		<nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.6); position: relative;">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
