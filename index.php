@@ -20,7 +20,8 @@ include_once "needed.php";
 			body, html {
 				font-size: 115%;
 			}
-			.real .container{
+			.logo_central #zebi{
+				width: 70%;
 				}
 		}
 
@@ -73,7 +74,7 @@ include_once "needed.php";
 	<!-- navigation -->
 	<div class="header">
 		<div class="logo_central">
-			<img src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto;"/>
+			<img id="zebi" src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">
