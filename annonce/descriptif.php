@@ -181,7 +181,7 @@ include_once "../needed.php";
 
   					</ul>
   				</il> " ;} ?>
-  				é
+  				
   			</div>
   		</header>
 	</section>
