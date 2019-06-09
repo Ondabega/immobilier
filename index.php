@@ -16,6 +16,20 @@ include_once "needed.php";
 <body>
 
 <style>
+@media screen and (max-device-width: 600px) {
+			body, html {
+				font-size: 115%;
+			}
+			.logo_central #zebi{
+				width: 70%;
+				}
+		}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .smenu {
 	padding: 0;
 	margin: 0;
@@ -58,9 +72,9 @@ include_once "needed.php";
 
 </style>
 	<!-- navigation -->
-	<div class="header" style="background: url(images/img3.jpg) no-repeat center; background-size: cover;">
-		<div>
-			<img src="images/Logoblanc.png" alt="log boutik imo" style="height: 600px; weight: 600px; margin-top: 30px;display: table-cell; vertical-align: middle; margin-left: auto; margin-right: auto;"/>
+	<div class="header">
+		<div class="logo_central">
+			<img id="zebi" src="images/Logoblanc.png" alt="log boutik imo" style="width: 55%; display: block; margin-left: auto;margin-right: auto;"/>
 		</div>
 		<nav class="nav" id="nav">
 			<div class="element">

@@ -77,7 +77,7 @@ include_once "../needed.php";
 		}
 
 		.slider-image {
-      width: 600px;
+      width: 12%;
       height: 400px;
 			float: left;
 			margin: 0;
@@ -91,18 +91,18 @@ include_once "../needed.php";
 
 		.slider-button {
 			display: inline-block;
-			height: 10px;
-			width: 12px;
+			height: 12px;
+			width: 14px;
 			border-radius: 5px;
-			background-color: red;
+			background-color: #3C7AB3;
 			transition: 1s;
 			margin-left: .3em;
 			margin-right: .3em;
 		}
 
 		.slider-button:hover {
-			width: 17px;
-			background-color: green;
+			width: 20px;
+			background-color: #44DAE8;
 			transition: .6s;
 		}
 
@@ -168,9 +168,8 @@ include_once "../needed.php";
   				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
   				<il class="selt" id="smenul">Annonces
   					<ul class="smenu">
-  						<il style="display: inherit; margin-top: .80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
+  						<il style="display: inherit; margin-top: 0.80em;"><a class="slist" style="color:white;" href="vente.php" style="color:black;">Ventes</a></il>
   						<il style="display: inherit;"><a class="slist" style="color:white;" href="location.php" style="color:black;">Locations</a></il>
-  						<il style="display: inherit;"><a class="slist" style="color:white;" href="locationp.php" style="color:black;">Loca</a></il>
   					</ul>
   				</il>
   				<a href="../contact-form.php" class="selt" onclick="myFunction()">Contact</a>
@@ -182,8 +181,7 @@ include_once "../needed.php";
 
   					</ul>
   				</il> " ;} ?>
-  				<?php if(!empty($_SESSION['login'])){ echo "<a href='../moncompte/deconnexion.php' class='selt' id='connect' onclick='myFunction()'>Deconnexion</a>" ;}
-  			else{ echo "<a href='../moncompte/identification.php' class='selt' id='connect' onclick='myFunction()'>Connexion</a>"; }?>
+  				é
   			</div>
   		</header>
 	</section>
@@ -309,7 +307,6 @@ include_once "../needed.php";
         $daa = $query->fetch();
         echo $daa['nom'] ?></p>
 				<p>Type: <?php  if($Data['type_bien']==0){echo " Maison";}else{echo "Appartement";} ?></p>
-				<div class="carte" style="background-color: grey; height: 90px; width: 60%; margin: 1.5em 0 0 0;">ici la map</div>
 			</div>
 			<div style="text-align: center; margin-bottom: 5em;"><a href="../contact-form.php"><button style="color:black; border:0.1px solid black" class="selt">Nous contacter</button></a></div>
 			<style type="text/css">
@@ -326,26 +323,76 @@ include_once "../needed.php";
 <?php }?>
 
 
+<<<<<<< HEAD
+=======
+
+
+		<script type="text/javascript">
+			let sliderImages = document.querySelectorAll('.slide-img'),zapNext = document.querySelector('#nxt'), zapPrev = document.querySelector('#prev'), current = 0;
+
+			// nettoie les images
+			function reset(){
+				for (let i = 0; i < sliderImages.length; i++) {
+					sliderImages[i].style.display = 'none'
+				}
+			}
+
+			// Debut du slide
+			function startSlide(){
+				reset();
+				sliderImages[0].style.display = 'block'
+			}
+
+			// image precedente
+			function slideLeft(){
+				reset();
+				sliderImages[current - 1].style.display = 'block';
+				current--;
+			}
+
+			// image suivante
+			function slideRight(){
+				reset();
+				sliderImages[current + 1].style.display = 'block';
+				current++;
+			}
+
+			// zap precedent
+			zapPrev.addEventListener('click', function(){
+				if (current === 0) {
+					current = sliderImages.length;
+				}
+				slideLeft();
+			})
+
+			// zap suivant
+			zapNext.addEventListener('click', function(){
+				if (current === sliderImages.length - 1) {
+					current = -1;
+				}
+				slideRight();
+			})
+
+			startSlide();
+		</script>
+
+	</section>
+
+
+<!-- fin de slider test -->
+
+
+>>>>>>> 215728a518ac6b4cba60ef11cbb2d913a24f8cda
   <footer class="footer" style="margin-bottom: 0px;">
   			<div class="row">
-              			<a class="case" rel="follow" href="https://twitter.com/">
-                			<img class="icon" alt="Twitter" title="Twitter" src="../twitter-icon.svg"></a>
-
-              			<a class="case" rel="follow" href="https://www.linkedin.com/">
-                			<img class="icon" alt="LinkedIn" title="LinkedIn" src="../linkedin-icon.svg"></a>
-
-              			<a class="case" rel="follow" href="https://www.instagram.com/">
-            				<img class="icon" alt="Instagram" title="Instagram" src="../instagram-icon.svg"></a>
-
-            				<a class="case" rel="follow" href="https://www.facebook.com/">
-            				<img class="icon" alt="Facebook" title="Facebook" src="../facebook-icon.svg"></a>
+              			<h4>boutikimo@gmail.com</h4>
             	</div>
 
   				<hr class="separator" style="margin-left: 47%;">
 
   				<div class="footer-bottom">
   					<div class="copyright-text">
-  						<p>CopyRight © 2019 Name</p>
+  						<p>CopyRight © 2019 Boutik Imo</p>
   					</div> <!-- End Col -->
   				</div>
   </footer>

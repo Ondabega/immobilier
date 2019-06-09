@@ -55,8 +55,8 @@ include_once "needed.php";
 	</style>
 
 	<!-- navigation -->
-	<div class="header" id="headcontact" style="background: url(images/img3.jpg) no-repeat center center; background-size: cover; height: 20em;">
-		<nav class="nav" id="nav">
+	<div class="header" id="headcontact" style="background: url(images/connect.jpg) no-repeat center center; background-size: cover; height: 22em;">
+		<nav class="nav" id="nav" style="background-color:rgba(3, 3, 3, 0.6); position: relative;">
 			<div class="element">
 				<a href= <?php echo $url ?> class="selt" onclick="myFunction()">Accueil</a>
 				<!--<il class="selt" id="smenul">Annonces
@@ -82,18 +82,6 @@ include_once "needed.php";
 	</div>
 
 	<!-- add javascript for navbar onscroll -->
-	<script type="text/javascript">
-		window.onscroll = function() {myFunction()};
-
-		function myFunction() {
-  		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    		document.getElementById("nav").className = "navbar";
-    	}
-  		else {
-    		document.getElementById("nav").className = "";
-  		}
-		}
-	</script>
 
 <section class="contact" id="contact">
 		<div class="container">
@@ -103,7 +91,7 @@ include_once "needed.php";
 		        		<fieldset>
 		            		<legend></legend>
 										<div class="logow">
-											<a href="index.php" class="logo" style="color:black;"> Audrey Brezout </a>
+											<a href="index.php" class="logo" style="color:black; font-family: Polarise; font-size: 2em;"> Audrey Brezout </a>
 										</div>
 										<div class="phrase">
 											<p> Aprés plus de 12ans d'éxpérience dans le domaine de l'immobilier, je vous invite à me contacter par mail pour obtenir des conseils.</p>
@@ -117,7 +105,7 @@ include_once "needed.php";
 	<!-- fin de contact********************* -->
 
 	<!-- pied de page -->
-	<footer class="footer" style="margin-bottom: 0px;">
+	<footer class="footer" style="margin-bottom: 0;">
 				<div class="row">
 	            			<h6 style="color:white;">boutikimo@gmail.com</h6>
 	          	</div>
